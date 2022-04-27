@@ -24,14 +24,14 @@
 
         <form method="post">
             <label>Name:
-<<<<<<< HEAD
+
                  <input type="text" name="name"><br />
             </label>
-=======
+
                  <input type="text" name="name"></label><br />
             </label>
 
->>>>>>> aab1360 (first)
+
             <label>Password:
                   <input type="password" name="pass"><br />
             </label>
@@ -43,11 +43,10 @@
 
     <div>
         <button onclick="location.href='/'">Back to main page</button>
-<<<<<<< HEAD
+
         <br />
         <button onclick="location.href='/auth'">Auth</button>
-=======
->>>>>>> aab1360 (first)
+
     </div>
 </body>
 </html>
