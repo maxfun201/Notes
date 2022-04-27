@@ -1,5 +1,7 @@
 package app.servlets;
 
+import app.model.Model;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
@@ -11,9 +13,10 @@ import java.io.IOException;
 public class authServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/auth.jsp");
         requestDispatcher.forward(req, resp);
+        Model model = Model.getInstance();
+
     }
 
 //    @Override
