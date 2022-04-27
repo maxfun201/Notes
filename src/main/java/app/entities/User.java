@@ -1,7 +1,7 @@
 package app.entities;
 
 // New comment
-
+//New comment 1 loh
 public class User {
     private String name;
     private String password;
