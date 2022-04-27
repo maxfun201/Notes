@@ -22,16 +22,28 @@
                 <h1>Add user</h1>
             </div>
 
+<<<<<<< HEAD
         <form method="post">
             <label>Name:
                  <input type="text" name="name"><br />
             </label>
+=======
+        <from method="post">
+            <label>Name:
+                 <input type="text" name="name"></label></from><br />
+            </label>
+
+>>>>>>> aab1360 (first)
             <label>Password:
                   <input type="password" name="pass"><br />
             </label>
 
             <button type="submit">Submit</button>
+<<<<<<< HEAD
         </form>
+=======
+        </from>
+>>>>>>> aab1360 (first)
         </div>
     </div>
 

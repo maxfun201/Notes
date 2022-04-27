@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
+<<<<<<< HEAD
 Built-By: Maxim
 Build-Jdk: 11.0.14
+=======
+Built-By: Рой
+Build-Jdk: Amazon Corretto version 11.0.13
+>>>>>>> aab1360 (first)
 
