@@ -37,6 +37,8 @@
 
     <div>
         <button onclick="location.href='/'">Back to main page</button>
+        <br />
+        <button onclick="location.href='/auth'">Auth</button>
     </div>
 </body>
 </html>
