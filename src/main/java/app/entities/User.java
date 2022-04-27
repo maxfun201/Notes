@@ -1,5 +1,7 @@
 package app.entities;
 
+// New comment
+
 public class User {
     private String name;
     private String password;
