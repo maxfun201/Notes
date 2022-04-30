@@ -1,6 +1,5 @@
 *.iml
-.idea/*
-out/*
-src/main/resources
+.idea/
+out/
 test/
-target/*
+target/
