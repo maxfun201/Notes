@@ -23,4 +23,14 @@
         <servlet-name>list</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>auth</servlet-name>
+        <servlet-class>app.servlets.authServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>auth</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
 </web-app>
