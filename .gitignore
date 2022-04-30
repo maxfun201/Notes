@@ -1,5 +1,9 @@
+.idea
+*.iws
 *.iml
-.idea/
-out/
-test/
+*.ipr
+
+HELP.md
 target/
+!**/src/main/**/target/
+!**/src/test/**/target/
