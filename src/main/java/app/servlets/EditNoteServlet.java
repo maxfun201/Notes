@@ -1,16 +1,13 @@
 package app.servlets;
 
-import app.model.Model;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.List;
 
-public class SignUpServlet extends HttpServlet {
+public class EditNoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/SignUp.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/EditNote.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
