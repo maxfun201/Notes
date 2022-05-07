@@ -36,7 +36,7 @@ public class addServlet extends HttpServlet {
 
         try{
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers?currentSchema=public&user=postgres&password=12345");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers?currentSchema=public&user=postgres&password=maxfun201");
             statement = connection.createStatement();
             statement.executeUpdate("insert into users values ( 4, '"+ name + "', '" + password + "')");
         }
