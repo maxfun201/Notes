@@ -26,30 +26,51 @@ public class addServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
-        User user = new User(name, password);
-        Model model = Model.getInstance();
-        model.add(user);
+        String repPassword = req.getParameter("reppass");
+//        String cb_signUp = req.getParameter("cb_signUp");
+//        System.out.println(cb_signUp);
 
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
+        boolean errorFlag = false;
 
-        try{
-            Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers?currentSchema=public&user=postgres&password=12345");
-            statement = connection.createStatement();
-            statement.executeUpdate("insert into users values ( 4, '"+ name + "', '" + password + "')");
+        if(password.equals(repPassword)){
+            User user = new User(name, password);
+            Model model = Model.getInstance();
+            model.add(user);
+
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet resultSet = null;
+
+            try{
+                Class.forName("org.postgresql.Driver");
+                connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers?currentSchema=public&user=postgres&password=12345");
+                statement = connection.createStatement();
+                int usrId = 0;
+                resultSet = statement.executeQuery("select * from users");
+                while(resultSet.next()){
+                    usrId = resultSet.getInt(1);
+                }
+                usrId++;
+
+                statement.executeUpdate("insert into users values ( " + usrId + ", '" + name + "', '" + password + "')");
+
+            }
+
+            catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            req.setAttribute("userName", name);
+            req.setAttribute("error", null);
+            errorFlag = true;
         }
+        else if(!errorFlag) req.setAttribute("error", "error");
 
-        catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
 
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        req.setAttribute("userName",name);
         doGet(req, resp);
     }
 }
