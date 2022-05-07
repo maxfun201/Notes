@@ -21,11 +21,13 @@
         <p>Password </p>
         <input type="password" class="input-box" placeholder="******"/>
         <br>
-        <button type="button" class="button1">
-            Login
-        </button>
+
 
     </form>
+
+    <div>
+        <button onclick="location.href='/Notes'">Login</button>
+    </div>
 </div>
 
 </body>

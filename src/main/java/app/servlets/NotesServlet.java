@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class authServlet extends HttpServlet {
+public class NotesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/auth.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/Notes.jsp");
         requestDispatcher.forward(req, resp);
 
 
+
     }
+    
 }
