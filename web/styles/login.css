@@ -1,0 +1,26 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Impact;
+    background: #2F2F2F;
+}
+
+.login
+{
+    width: 300px;
+    border: #E78A00 solid 3px;
+    -webkit-border-radius: 3px;
+
+    background: #ffffff;
+    padding: 0px;
+    margin: 10% auto 0;
+    text-align: center;
+    font: 20px Inter, sans-serif;
+}
+
+.input-box
+{
+    /*margin: 0 10% 0;
+    text-align: left; */
+}
