@@ -28,4 +28,8 @@ public class Model {
                 .map(User::getName)
                 .collect(Collectors.toList());
     }
+
+    String newUser = "INSERT INTO Users "
+                    + "(userId, login, password) " + "VALUES"
+                    + "(4, name, pass)";
 }
