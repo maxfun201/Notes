@@ -34,15 +34,6 @@
         <url-pattern>/auth</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>SignUp</servlet-name>
-        <servlet-class>app.servlets.SignUpServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>SignUp</servlet-name>
-        <url-pattern>/SignUp</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>LogIn</servlet-name>
