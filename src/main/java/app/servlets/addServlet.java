@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.rowset.serial.SerialException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
 
 public class addServlet extends HttpServlet {
     @Override
@@ -28,6 +29,23 @@ public class addServlet extends HttpServlet {
         User user = new User(name, password);
         Model model = Model.getInstance();
         model.add(user);
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try{
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers?currentSchema=public&user=postgres&password=12345");
+            statement = connection.createStatement();
+            statement.executeUpdate("insert into users values ( 4, '"+ name + "', '" + password + "')");
+        }
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         req.setAttribute("userName",name);
         doGet(req, resp);
