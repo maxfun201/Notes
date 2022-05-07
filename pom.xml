@@ -5,7 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
+<<<<<<< HEAD
     <artifactId>Notes_app</artifactId>
+=======
+    <artifactId>Notes</artifactId>
+>>>>>>> d898207 (first)
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,6 +17,7 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+<<<<<<< HEAD
     <dependencies>
 
 
@@ -40,4 +45,6 @@
 
     </dependencies>
 
+=======
+>>>>>>> d898207 (first)
 </project>
