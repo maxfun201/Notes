@@ -8,9 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="styles/w3.css">
     <title>Notes</title>
 </head>
 <body>
-
+<button>менюшка</button>
+<style>
+    textarea {
+        width: 10%; /* Ширина поля в процентах */
+        height: 200px; /* Высота поля в пикселах */
+        resize: none; /* Запрещаем изменять размер */
+    }
+</style>
+<textarea readonly>заметки1..</textarea>
+<button>редакция </button>
+<button>Новая заметка</button>
 </body>
 </html>

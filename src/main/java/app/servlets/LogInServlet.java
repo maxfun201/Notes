@@ -9,5 +9,8 @@ public class LogInServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/LogIn.jsp");
         requestDispatcher.forward(req, resp);
+
+
+
     }
 }

@@ -54,4 +54,15 @@
         <url-pattern>/LogIn</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Notes</servlet-name>
+        <servlet-class>app.servlets.NotesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Notes</servlet-name>
+        <url-pattern>/Notes</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
