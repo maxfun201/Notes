@@ -40,9 +40,11 @@ public class addServlet extends HttpServlet {
             statement = connection.createStatement();
             statement.executeUpdate("insert into users values ( 4, '"+ name + "', '" + password + "')");
         }
+
         catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         catch (SQLException e) {
             e.printStackTrace();
         }

@@ -8,9 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../styles/login.css">
     <title>Log in</title>
 </head>
 <body>
+
+<div class="login">
+    <h1>Log In</h1>
+    <form class="input-box">
+        <p>Email Address </p>
+        <input type="email" class="input-box" placeholder="example@site.com"/>
+        <p>Password </p>
+        <input type="password" class="input-box" placeholder="******"/>
+        <br>
+
+
+    </form>
+
+    <div>
+        <button onclick="location.href='/Notes'">Login</button>
+
+    </div>
+</div>
 
 </body>
 </html>

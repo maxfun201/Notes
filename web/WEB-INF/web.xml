@@ -33,4 +33,37 @@
         <servlet-name>auth</servlet-name>
         <url-pattern>/auth</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>LogIn</servlet-name>
+        <servlet-class>app.servlets.LogInServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogIn</servlet-name>
+        <url-pattern>/LogIn</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Notes</servlet-name>
+        <servlet-class>app.servlets.NotesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Notes</servlet-name>
+        <url-pattern>/Notes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditNote</servlet-name>
+        <servlet-class>app.servlets.EditNoteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EditNote</servlet-name>
+        <url-pattern>/EditNote</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
