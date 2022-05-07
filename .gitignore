@@ -2,6 +2,7 @@
 *.iws
 *.iml
 *.ipr
+lib/
 
 HELP.md
 target/
