@@ -17,6 +17,9 @@
             if(request.getAttribute("userName") != null){
                 out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
             }
+            if(request.getAttribute("error") != null) {
+                out.println("<p>Passwords don't match. Please retry.</p>");
+            }
         %>
         <div>
             <h1>Sign Up</h1>
@@ -26,14 +29,14 @@
                 <p>Password </p>
                 <input type="password" class="input-box" name="pass" placeholder="******"/>
                 <p>Repeat password</p>
-                <input type="password" class="input-box" name="pass"placeholder="******"/>
+                <input type="password" class="input-box" name="reppass"placeholder="******"/>
                 <br/>
                 <%--            just a checkbox for now--%>
-                <input type="checkbox">
+                <input type="checkbox" name="cb_signUp" />
                 <p>I'm not a robot</p>
 
                 <br>
-                <button  type="submit" class="button1">
+                <button  type="submit" class="button1" name="createAcc" >
                     Create Account
                 </button>
 
