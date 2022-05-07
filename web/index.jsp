@@ -16,7 +16,8 @@
       <button onclick="location.href='/list'">List user</button>
       <button onclick="location.href='/add'">Add user</button>
       <button onclick="location.href='/SignUp'">Sign up</button>
-      <button onclick="location.href='/LogIn'">LogIn</button>
+      <button onclick="location.href='/LogIn'">Log In</button>
+      <button onclick="location.href='/EditNote'">Edit Note</button>
     </div>
   </body>
 </html>

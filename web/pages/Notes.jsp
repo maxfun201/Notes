@@ -23,5 +23,9 @@
 <textarea readonly>заметки1..</textarea>
 <button>редакция </button>
 <button>Новая заметка</button>
+
+
+    <h1 class="head-text">Notes</h1>
+
 </body>
 </html>
