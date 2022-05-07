@@ -12,5 +12,7 @@
 </head>
 <body>
 
+    <h1 class="head-text">Notes</h1>
+
 </body>
 </html>
