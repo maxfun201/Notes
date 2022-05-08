@@ -14,19 +14,29 @@
 <body>
 
 <div class="login">
+
+    <%
+
+
+    %>
+
+
     <h1>Log In</h1>
     <form class="input-box">
         <p>Email Address </p>
-        <input type="email" class="input-box" placeholder="example@site.com"/>
+        <input type="text" class="input-box" placeholder="example@site.com" name="log_name"/>
         <p>Password </p>
-        <input type="password" class="input-box" placeholder="******"/>
-        <br>
+        <input type="password" class="input-box" placeholder="******" name="log_pass"/>
+        <br />
+
+        <button type="submit">Login</button>
 
 
     </form>
 
     <div>
-        <button onclick="location.href='/Notes'">Login</button>
+<%--        <button onclick="location.href='/Notes'">Login</button>--%>
+
 
     </div>
 </div>
