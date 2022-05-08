@@ -30,6 +30,10 @@ public class addServlet extends HttpServlet {
 //        String cb_signUp = req.getParameter("cb_signUp");
 //        System.out.println(cb_signUp);
 
+        String db_url = "jdbc:postgresql://ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d86odmf8u87ddm";
+        String db_name = "kvwxohwlyxngbt";
+        String db_pass = "c0d032437b3a159f707b4eb1a214f1b9202d7c218951272d5a69b16967e2ee01";
+
         boolean errorFlag = false;
 
         if(password.equals(repPassword)){
@@ -43,7 +47,7 @@ public class addServlet extends HttpServlet {
 
             try{
                 Class.forName("org.postgresql.Driver");
-                connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers?currentSchema=public&user=postgres&password=12345");
+                connection = DriverManager.getConnection(db_url, db_name, db_pass);
                 statement = connection.createStatement();
                 int usrId = 0;
                 resultSet = statement.executeQuery("select * from users");
@@ -54,6 +58,7 @@ public class addServlet extends HttpServlet {
 
                 statement.executeUpdate("insert into users values ( " + usrId + ", '" + name + "', '" + password + "')");
 
+                connection.close();
             }
 
             catch (ClassNotFoundException e) {
