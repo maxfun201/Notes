@@ -13,20 +13,19 @@
 </head>
 <body>
 
-<div class="login">
-    <h1>Log In</h1>
-    <form class="input-box">
-        <p>Email Address </p>
-        <input type="email" class="input-box" placeholder="example@site.com"/>
-        <p>Password </p>
-        <input type="password" class="input-box" placeholder="******"/>
-        <br>
+<div class="login-page">
+    <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt=""></img>
+    <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt=""></img>
+    <div class="form">
+        <h1>Log In</h1>
 
-
-    </form>
-
-    <div>
+        <p >Email Address</p>
+        <input  type="text" placeholder="example@site.dom"/>
+        <p >Password</p>
+        <input type="password" placeholder="******"/>
         <button onclick="location.href='/Notes'">Login</button>
+        <p class="message">Not registered? <a onclick="location.href='/SignUp'">Create an account</a></p>
+
     </div>
 </div>
 
