@@ -39,6 +39,7 @@ public class LogInServlet extends HttpServlet {
             statement = connection.createStatement();
 
 
+            req.setAttribute("error", null);
             resultSet = statement.executeQuery("select * from users");
             while(resultSet.next()){
                 String currentName = resultSet.getString("login");
