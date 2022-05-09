@@ -33,8 +33,8 @@
         <input  type="text" placeholder="example@site.dom" name="log_name"/>
         <p >Password</p>
         <input type="password" placeholder="******" name="log_pass"/>
-        <button type+"submit">Login</button>
-        <p class="message">Not registered? <a onclick="location.href='/SignUp'">Create an account</a></p>
+        <button type="submit">Login</button>
+        <p class="message">Not registered? <a onclick="location.href='/add'">Create an account</a></p>
     </form>
 
 </div>
