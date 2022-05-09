@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div class="login">
+<div class="login-page">
 
     <%
         if(request.getAttribute("error") != null){
@@ -26,6 +26,9 @@
     %>
 
 
+        <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt=""></img>
+        <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt=""></img>
+        <div class="form">
     <h1>Log In</h1>
     <form class="input-box" method="post">
         <p>Email Address </p>
