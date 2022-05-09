@@ -14,6 +14,14 @@
 <body>
 
 <div class="login-page">
+   <%
+        if(request.getAttribute("error") != null){
+            out.println("Error");
+        }
+        if(request.getAttribute("login") != null){
+            out.println("Welcome");
+        }
+    %>
     <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt=""></img>
     <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt=""></img>
     <div class="form">
