@@ -16,8 +16,6 @@ import java.sql.*;
 public class addServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-//        PrintWriter writer = resp.getWriter();
-//        writer.println("Method GET from addServlet");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/add.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -30,16 +28,16 @@ public class addServlet extends HttpServlet {
 //        String cb_signUp = req.getParameter("cb_signUp");
 //        System.out.println(cb_signUp);
 
-        String db_url = "jdbc:postgresql://ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d86odmf8u87ddm";
-        String db_name = "kvwxohwlyxngbt";
-        String db_pass = "c0d032437b3a159f707b4eb1a214f1b9202d7c218951272d5a69b16967e2ee01";
+//        String db_url = "jdbc:postgresql://ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d86odmf8u87ddm";
+//        String db_name = "kvwxohwlyxngbt";
+//        String db_pass = "c0d032437b3a159f707b4eb1a214f1b9202d7c218951272d5a69b16967e2ee01";
 
         boolean errorFlag = false;
 
         if(password.equals(repPassword)){
-            User user = new User(name, password);
-            Model model = Model.getInstance();
-            model.add(user);
+//            User user = new User(name, password);
+//            Model model = Model.getInstance();
+//            model.add(user);
 
             Connection connection = null;
             Statement statement = null;
@@ -47,7 +45,7 @@ public class addServlet extends HttpServlet {
 
             try{
                 Class.forName("org.postgresql.Driver");
-                connection = DriverManager.getConnection(db_url, db_name, db_pass);
+                connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers", "postgres", "12345");
                 statement = connection.createStatement();
                 int usrId = 0;
                 resultSet = statement.executeQuery("select * from users");

@@ -16,20 +16,25 @@
 <div class="login">
 
     <%
-
+        if(request.getAttribute("error") != null){
+            out.println("Error");
+        }
+        if(request.getAttribute("login") != null){
+            out.println("Welcome");
+        }
 
     %>
 
 
     <h1>Log In</h1>
-    <form class="input-box">
+    <form class="input-box" method="post">
         <p>Email Address </p>
         <input type="text" class="input-box" placeholder="example@site.com" name="log_name"/>
         <p>Password </p>
         <input type="password" class="input-box" placeholder="******" name="log_pass"/>
         <br />
 
-        <button type="submit">Login</button>
+        <button type="submit" >Login</button>
 
 
     </form>
