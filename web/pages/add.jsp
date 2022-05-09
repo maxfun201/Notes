@@ -8,30 +8,39 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="styles/w3.css">
+    <link rel="stylesheet" href="../styles/login.css">
     <title>Add new user</title>
 </head>
 <body>
-    <div>
+    <div class="login">
         <%
             if(request.getAttribute("userName") != null){
                 out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
             }
+            if(request.getAttribute("error") != null) {
+                out.println("<p>Passwords don't match. Please retry.</p>");
+            }
         %>
         <div>
-            <div>
-                <h1>Add user</h1>
-            </div>
+            <h1>Sign Up</h1>
+            <form class="input-box" method="post">
+                <p>User name </p>
+                <input type="text"  name="name" class="input-box" placeholder="admin"/>
+                <p>Password </p>
+                <input type="password" class="input-box" name="pass" placeholder="******"/>
+                <p>Repeat password</p>
+                <input type="password" class="input-box" name="reppass"placeholder="******"/>
+                <br/>
+                <%--            just a checkbox for now--%>
+                <input type="checkbox" name="cb_signUp" />
+                <p>I'm not a robot</p>
 
-        <form method="post">
-            <label>Name:
-                 <input type="text" name="name"><br />
-            </label>
-            <label>Password:
-                  <input type="password" name="pass"><br />
-            </label>
+                <br>
+                <button  type="submit" class="button1" name="createAcc" >
+                    Create Account
+                </button>
 
-            <button type="submit">Submit</button>
+
         </form>
         </div>
     </div>

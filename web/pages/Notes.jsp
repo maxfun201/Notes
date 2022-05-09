@@ -26,6 +26,7 @@
 
 
     <h1 class="head-text">Notes</h1>
-
+<button onclick="location.href='/EditNote'">Edit Note</button>
+<button onclick="location.href='/Login'">Exit</button>
 </body>
 </html>

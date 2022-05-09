@@ -22,19 +22,21 @@
             out.println("Welcome");
         }
     %>
+  
     <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt=""></img>
     <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt=""></img>
     <div class="form">
         <h1>Log In</h1>
 
+   <form class="input-box" method="post">
         <p >Email Address</p>
-        <input  type="text" placeholder="example@site.dom"/>
+        <input  type="text" placeholder="example@site.dom" name="log_name"/>
         <p >Password</p>
-        <input type="password" placeholder="******"/>
-        <button onclick="location.href='/Notes'">Login</button>
+        <input type="password" placeholder="******" name="log_pass"/>
+        <button type+"submit">Login</button>
         <p class="message">Not registered? <a onclick="location.href='/SignUp'">Create an account</a></p>
+    </form>
 
-    </div>
 </div>
 
 </body>

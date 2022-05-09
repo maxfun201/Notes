@@ -1,11 +1,10 @@
 <%--
   Created by IntelliJ IDEA.
-  User: 1
-  Date: 2022-05-07
-  Time: 2:56 p.m.
+  User: Admin
+  Date: 10.05.2022
+  Time: 2:04
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -36,4 +35,3 @@
 
 </body>
 </html>
-
