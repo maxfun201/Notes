@@ -21,7 +21,7 @@
     <img class="left-bottom" src="/pages/assets/SignUpCactus.png" alt="">
     <img class="right-top" src="/pages/assets/SignUpFlowerOrange.png" alt="">
     <div class="form">
-        <h1>Sign Up</h1>
+        <h1>Sign Up <img class="home" src="/pages/assets/Home-icon.svg" onclick="location.href='/'" alt="home"> </h1>
         <form  method="post">
             <p class="label">Login</p>
             <input type="text"  name="name" class="input-box" placeholder="username"/>

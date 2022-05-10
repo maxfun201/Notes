@@ -14,13 +14,12 @@
 </head>
 <body>
 
-<div class="login-page">
-
+<div class="login">
   
     <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt="">
     <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt="">
     <div class="form">
-        <h1>Log In</h1>
+        <h1> Log In <img class="home" src="/pages/assets/Home-icon.svg" onclick="location.href='/'" alt="home"> </h1>
 
          <form method="post">
           <p >Login</p>
