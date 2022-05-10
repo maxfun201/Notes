@@ -8,14 +8,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <link rel="stylesheet" href="styles/w3.css">
+    <link rel="stylesheet" href="styles/login.css">
     <title>Notes service</title>
   </head>
   <body>
-    <div>
-      <button onclick="location.href='/list'">List user</button>
-      <button onclick="location.href='/add'">Sign up</button>
-      <button onclick="location.href='/LogIn'">Log In</button>
+
+  <div class="login-page">
+    <img class="left-bottom" src="/pages/assets/SignUpCactus.png" alt="">
+    <img class="right-top" src="/pages/assets/SignUpFlowerOrange.png" alt="">
+    <div class="form">
+      <h1>Welcome!</h1>
+
+      <p class="desc">NOTE is a simple online service you can use to keep organised.</p>
+      <p class="desc">Add stickers to your board to save your ideas and add tasks to keep track of what you need to do.</p>
+
+      <button onclick="location.href='/add'">Sign Up</button>
+      <p class="message">Already registered? <a onclick="location.href='/LogIn'">Log in instead</a></p>
+
     </div>
+  </div>
+
   </body>
 </html>
