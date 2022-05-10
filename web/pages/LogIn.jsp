@@ -28,15 +28,15 @@
           <button type="submit">Log In</button>
              <%
                  if(request.getAttribute("name_error") != null){
-                     out.println("Wrong name");
+                     out.println("<h51>Wrong name</h51>");
                  }
                  else out.println("");
                  if(request.getAttribute("pass_error") != null){
-                     out.println("Wrong password");
+                     out.println("<h51>Wrong password</h51>");
                  }
                  else out.println("");
                  if(request.getAttribute("login") != null){
-                     out.println("Welcome");
+                     out.println("<h5>Welcome<h5>");
                  }
                  else out.println("");
              %>
