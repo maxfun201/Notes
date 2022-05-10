@@ -13,7 +13,7 @@
   </head>
   <body>
 
-  <div class="login-page">
+  <div class="login">
     <img class="left-bottom" src="/pages/assets/SignUpCactus.png" alt="">
     <img class="right-top" src="/pages/assets/SignUpFlowerOrange.png" alt="">
     <div class="form">
