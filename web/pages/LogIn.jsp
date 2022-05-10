@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.io.IOException" %><%--
+
   Created by IntelliJ IDEA.
   User: 1
   Date: 2022-05-07
@@ -13,7 +14,8 @@
 </head>
 <body>
 
-<div class="login">
+<div class="login-page">
+
   
     <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt="">
     <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt="">
