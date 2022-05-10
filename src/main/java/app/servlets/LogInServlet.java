@@ -53,6 +53,7 @@ public class LogInServlet extends HttpServlet {
                         break;
                     }
                 }
+
             }
             if(!name_flag) req.setAttribute("name_error", "true");
             if(!pass_flag && name_flag) req.setAttribute("pass_error", "true");
