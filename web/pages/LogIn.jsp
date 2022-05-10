@@ -27,12 +27,18 @@
           <input class="input-box" type="password" placeholder="******" name="log_pass"/>
           <button type="submit">Log In</button>
              <%
-                 if(request.getAttribute("error") != null){
-                     out.println("Error");
+                 if(request.getAttribute("name_error") != null){
+                     out.println("Wrong name");
                  }
+                 else out.println("");
+                 if(request.getAttribute("pass_error") != null){
+                     out.println("Wrong password");
+                 }
+                 else out.println("");
                  if(request.getAttribute("login") != null){
                      out.println("Welcome");
                  }
+                 else out.println("");
              %>
          </form>
          <p class="message">Not registered? <a onclick="location.href='/add'">Create an account</a></p>
