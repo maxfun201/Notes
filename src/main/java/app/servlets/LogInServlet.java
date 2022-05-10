@@ -51,7 +51,7 @@ public class LogInServlet extends HttpServlet {
                     }
                     else req.setAttribute("error", "true");
                 }
-                else req.setAttribute("error", "true");
+
             }
 
         }

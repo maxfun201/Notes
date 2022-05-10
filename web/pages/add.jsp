@@ -18,6 +18,7 @@
                 out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
             }
             if(request.getAttribute("error") != null) {
+
                 out.println("<p>Passwords don't match. Please retry.</p>");
             }
         %>
@@ -44,6 +45,7 @@
         </form>
         </div>
     </div>
+
 
     <div>
         <button onclick="location.href='/'">Back to main page</button>

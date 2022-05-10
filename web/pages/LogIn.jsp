@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.io.IOException" %><%--
+
   Created by IntelliJ IDEA.
   User: 1
   Date: 2022-05-07
@@ -14,14 +15,17 @@
 <body>
 
 <div class="login-page">
-   <%
+   <%     request.getSession(false);
         if(request.getAttribute("error") != null){
             out.println("Error");
         }
+
         if(request.getAttribute("login") != null){
-            out.println("Welcome");
-        }
-    %>
+
+        out.println("Welcome");
+
+             }%>
+
   
     <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt=""></img>
     <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt=""></img>
@@ -33,7 +37,9 @@
         <input  type="text" placeholder="example@site.dom" name="log_name"/>
         <p >Password</p>
         <input type="password" placeholder="******" name="log_pass"/>
-        <button type="submit">Login</button>
+
+        <button  type="submit" onclick="location.href='/Notes'">Login</button>
+
         <p class="message">Not registered? <a onclick="location.href='/add'">Create an account</a></p>
     </form>
 
