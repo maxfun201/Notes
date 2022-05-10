@@ -9,48 +9,41 @@
 <html>
 <head>
     <link rel="stylesheet" href="../styles/login.css">
-    <title>Add new user</title>
+<%--    <script src='https://www.google.com/recaptcha/api.js'></script>--%>
+    <title>Sign In</title>
 </head>
 <body>
-    <div class="login">
+
+<div class="login">
+
+
+
+    <img class="left-bottom" src="/pages/assets/SignUpCactus.png" alt="">
+    <img class="right-top" src="/pages/assets/SignUpFlowerOrange.png" alt="">
+    <div class="form">
+        <h1>Sign Up</h1>
+        <form  method="post">
+            <p class="label">Login</p>
+            <input type="text"  name="name" class="input-box" placeholder="username"/>
+            <p class="label">Password</p>
+            <input type="password" class="input-box" name="pass" placeholder="******"/>
+            <p class="label">Repeat Password</p>
+            <input type="password" class="input-box" name="reppass" placeholder="******"/>
+<%--            <div class="g-recaptcha" data-sitekey="keygoeshere"></div>--%>
+            <button onclick="location.href='/LogIn'">Create Account</button>
+        </form>
         <%
             if(request.getAttribute("userName") != null){
-                out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
+                out.println("<h5>Successfully created account '" + request.getAttribute("userName") + "' </h5>");
             }
             if(request.getAttribute("error") != null) {
-
-                out.println("<p>Passwords don't match. Please retry.</p>");
+                out.println("<h6>Passwords don't match. Please try again.<h6>");
             }
         %>
-        <div>
-            <h1>Sign Up</h1>
-            <form class="input-box" method="post">
-                <p>User name </p>
-                <input type="text"  name="name" class="input-box" placeholder="admin"/>
-                <p>Password </p>
-                <input type="password" class="input-box" name="pass" placeholder="******"/>
-                <p>Repeat password</p>
-                <input type="password" class="input-box" name="reppass"placeholder="******"/>
-                <br/>
-                <%--            just a checkbox for now--%>
-                <input type="checkbox" name="cb_signUp" />
-                <p>I'm not a robot</p>
+        <p class="message">Already registered? <a onclick="location.href='/LogIn'">Log in instead</a></p>
 
-                <br>
-                <button  type="submit" class="button1" name="createAcc" >
-                    Create Account
-                </button>
-
-
-        </form>
-        </div>
     </div>
+</div>
 
-
-    <div>
-        <button onclick="location.href='/'">Back to main page</button>
-        <br />
-        <button onclick="location.href='/auth'">Authorization</button>
-    </div>
 </body>
 </html>

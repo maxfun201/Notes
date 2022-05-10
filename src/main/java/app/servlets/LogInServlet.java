@@ -27,7 +27,8 @@ public class LogInServlet extends HttpServlet {
         Statement statement = null;
         ResultSet resultSet = null;
 
-        boolean log_flag = false;
+        boolean name_flag = false;
+        boolean pass_flag = false;
 
 //        String db_url = "jdbc:postgresql://ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d86odmf8u87ddm";
 //        String db_name = "kvwxohwlyxngbt";
@@ -45,14 +46,18 @@ public class LogInServlet extends HttpServlet {
                 String currentName = resultSet.getString("login");
                 if(currentName.equals(name)){
                     String currentPassword = resultSet.getString("password");
+                    name_flag = true;
                     if(currentPassword.equals(password)){
                         req.setAttribute("login", "true");
+                        pass_flag = true;
                         break;
                     }
-                    else req.setAttribute("error", "true");
                 }
 
             }
+            if(!name_flag) req.setAttribute("name_error", "true");
+            if(!pass_flag && name_flag) req.setAttribute("pass_error", "true");
+            if(name_flag && pass_flag) req.setAttribute("login", "true");
 
         }
         catch (ClassNotFoundException e){
