@@ -17,7 +17,7 @@
     <img class="left-bottom" src="/pages/assets/SignUpCactus.png" alt="">
     <img class="right-top" src="/pages/assets/SignUpFlowerOrange.png" alt="">
     <div class="form">
-      <h1>Welcome!</h1>
+      <h2>Welcome!</h2>
 
       <p class="desc">NOTE is a simple online service you can use to keep organised.</p>
       <p class="desc">Add stickers to your board to save your ideas and add tasks to keep track of what you need to do.</p>
