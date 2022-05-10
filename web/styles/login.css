@@ -1,26 +1,132 @@
-body
-{
-    margin: 0;
-    padding: 0;
-    font-family: Impact;
+@import url(https://fonts.googleapis.com/css?family=Inter:300);
+
+body {
+    font-size: 20px;
     background: #2F2F2F;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
 }
 
-.login
-{
-    width: 300px;
-    border: #E78A00 solid 3px;
-    -webkit-border-radius: 3px;
+.login {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
 
-    background: #ffffff;
-    padding: 0px;
-    margin: 10% auto 0;
+h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.form {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 10px 30px;
     text-align: center;
-    font: 20px Inter, sans-serif;
+    border: 3px solid #E78A00;
+    border-radius: 7px;
 }
 
-.input-box
-{
-    /*margin: 0 10% 0;
-    text-align: left; */
+.input-box {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 2px solid #E78A00;
+    margin: 0 0 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.label{
+    margin: 5px 0 0;
+}
+
+.form button {
+    background: #E78A00;
+    width: 100%;
+    border: 0;
+    margin: 15px 0 10px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #FFB546;
+}
+
+p {
+    margin: 15px 0 0;
+    text-align: left;
+    font-size: 16px;
+}
+
+h5 {
+    text-align: center;
+    color: green;
+    font-size: 14px;
+}
+
+h6 {
+    text-align: center;
+    color: indianred;
+}
+
+.desc{
+    margin: 10px 0 16px;
+}
+
+.message {
+    text-align: center;
+    margin: 15px 0 15px;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.message a:hover,.message a:active,.message a:focus {
+    color: lightgreen;
+    cursor: pointer;
+}
+
+.left-top {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.left-bottom {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+}
+
+.right-top {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    top: 5%;
+    right: 3%;
+}
+
+.right-bottom {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    max-width: 10%;
+    bottom: 5%;
+    right: 3%;
 }

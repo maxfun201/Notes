@@ -14,28 +14,28 @@
 <body>
 
 <div class="login">
+  
+    <img class="left-top" src="/pages/assets/LogInFlowerYellow.png" alt="">
+    <img class="right-bottom" src="/pages/assets/LogInAloe.png" alt="">
+    <div class="form">
+        <h1>Log In</h1>
 
-    <%
-
-
-    %>
-
-
-    <h1>Log In</h1>
-    <form class="input-box">
-        <p>Email Address </p>
-        <input type="text" class="input-box" placeholder="example@site.com" name="log_name"/>
-        <p>Password </p>
-        <input type="password" class="input-box" placeholder="******" name="log_pass"/>
-        <br />
-
-        <button type="submit">Login</button>
-
-
-    </form>
-
-    <div>
-<%--        <button onclick="location.href='/Notes'">Login</button>--%>
+         <form method="post">
+          <p >Login</p>
+          <input class="input-box" type="text" placeholder="username" name="log_name"/>
+          <p >Password</p>
+          <input class="input-box" type="password" placeholder="******" name="log_pass"/>
+          <button type="submit">Log In</button>
+             <%
+                 if(request.getAttribute("error") != null){
+                     out.println("Error");
+                 }
+                 if(request.getAttribute("login") != null){
+                     out.println("Welcome");
+                 }
+             %>
+         </form>
+         <p class="message">Not registered? <a onclick="location.href='/add'">Create an account</a></p>
 
 
     </div>
