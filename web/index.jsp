@@ -14,7 +14,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-<<<<<<< HEAD
     <link rel="stylesheet" href="styles/login.css">
     <title>Notes service</title>
   </head>
@@ -35,11 +34,5 @@
     </div>
   </div>
 
-=======
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
->>>>>>> 14a3894 (tt)
   </body>
 </html>
