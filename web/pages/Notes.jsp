@@ -8,25 +8,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="styles/w3.css">
+    <link rel="stylesheet" href="/styles/notes.css">
     <title>Notes</title>
 </head>
 <body>
-<button>менюшка</button>
-<style>
-    textarea {
-        width: 10%; /* Ширина поля в процентах */
-        height: 200px; /* Высота поля в пикселах */
-        resize: none; /* Запрещаем изменять размер */
-    }
-</style>
-<textarea readonly>заметки1..</textarea>
-<button>редакция </button>
-<button>Новая заметка</button>
 
 
-    <h1 class="head-text">Notes</h1>
+<input class = "add" type="image" src="/pages/assets/Plus.svg" alt="">
+
+<img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
+
+<h1 class="head-text">Notes</h1>
+<input type="checkbox" id="nav-toggle" hidden >
+
+<nav class="nav">
+    <label for="nav-toggle" class="nav-toggle" onclick></label>
+    <ul>
+        <li><a href="#1">Notes</a>
+        <li><a href="#2">Tasks</a>
+        <li><a href="#3">Archive</a>
+    </ul>
+</nav>
+
+
+
+
+
+<!--
 <button onclick="location.href='/EditNote'">Edit Note</button>
-<button onclick="location.href='/Login'">Exit</button>
+    <button onclick="location.href='/Login'">Exit</button>
+ -->
 </body>
 </html>
+

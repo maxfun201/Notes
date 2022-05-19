@@ -17,6 +17,12 @@ body {
 h1 {
     font-size: 30px;
     margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
 .form {
@@ -135,4 +141,14 @@ h6 {
     max-width: 10%;
     bottom: 5%;
     right: 3%;
+}
+
+.home {
+    float: right;
+    width: 20px;
+    margin: 8px 10px 0 0;
+}
+
+.home:hover,.home:active,.home:focus {
+    cursor: pointer;
 }
