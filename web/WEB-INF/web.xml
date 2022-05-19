@@ -65,5 +65,4 @@
         <url-pattern>/EditNote</url-pattern>
     </servlet-mapping>
 
-
 </web-app>
