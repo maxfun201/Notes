@@ -42,6 +42,7 @@
                  else out.println("");
              %>
          </form>
+        <button onclick="location.href='/Notes'">Notes</button>
          <p class="message">Not registered? <a onclick="location.href='/add'">Create an account</a></p>
 
 

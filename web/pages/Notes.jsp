@@ -34,10 +34,10 @@
 
 
 
-<!--
+
 <button onclick="location.href='/EditNote'">Edit Note</button>
-    <button onclick="location.href='/Login'">Exit</button>
- -->
+    <button onclick="location.href='/LogIn'">Exit</button>
+
 </body>
 </html>
 
