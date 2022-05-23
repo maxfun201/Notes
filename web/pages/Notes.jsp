@@ -13,31 +13,71 @@
 </head>
 <body>
 
+<div id="mySidenav" class="sidenav">
+    <div class="user-box">
+        <img class="user-icon" src="/pages/assets/Profile.svg" alt="Usr">
+        <img class="user-exit" src="/pages/assets/Exit.svg" onclick="location.href='/LogIn'" alt="Exit">
+        <p>username</p>
 
-<input class = "add" type="image" src="/pages/assets/Plus.svg" alt="">
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
+    <div class="links-box">
+        <a class="active-page">Notes</a>
+        <a href="#">Tasks</a>
+        <a href="#">Archive</a>
+    </div>
+</div>
 
-<img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
+<h1>Notes</h1>
+<!-- Sidenav menu -->
 
-<h1 class="head-text">Notes</h1>
-<input type="checkbox" id="nav-toggle" hidden >
-
-<nav class="nav">
-    <label for="nav-toggle" class="nav-toggle" onclick></label>
-    <ul>
-        <li><a href="#1">Notes</a>
-        <li><a href="#2">Tasks</a>
-        <li><a href="#3">Archive</a>
-    </ul>
-</nav>
+    <img class="menu-but" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
 
 
+<!-- All page content here -->
+<div id="main">
 
 
+    <img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditNote'" alt="New note">
+    <img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
 
-<!--
-<button onclick="location.href='/EditNote'">Edit Note</button>
-    <button onclick="location.href='/Login'">Exit</button>
- -->
+    <div class="stickers-box">
+        <%-- placeholder stickers  --%>
+        <div class="sticker">
+            <h1>Name</h1>
+            <p>Sample text sample text sample text sample text</p>
+        </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+
+    </div>
+
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "350px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
 </body>
 </html>
 
