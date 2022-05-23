@@ -54,7 +54,7 @@ h1 {
 }
 
 .stickers-box{
-    border: 2px dashed red;
+    /*border: 2px dashed red;*/
     width: auto;
     margin-left: 5%;
     margin-right: 5%;
@@ -71,10 +71,21 @@ h1 {
     background: #ffcf71;
 }
 
+.dots{
+    width: 24px;
+    float: right;
+    visibility: hidden;
+}
+
+/*.sticker .dots:hover~>{*/
+/*    visibility: visible;*/
+/*}*/
+
 .sticker h1{
-    margin-top: 10px;
+    margin-top: 3px;
     font-size: 24px;
     font-weight: bold;
+    margin-left: 24px;
 }
 
 .sticker p{
