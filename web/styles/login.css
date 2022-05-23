@@ -132,7 +132,7 @@ h6 {
     z-index: -1;
     /*border: 2px dashed red;*/
     position: absolute;
-    max-width: 10%;
+    width: 200px;
     bottom: 5%;
     right: 3%;
 }

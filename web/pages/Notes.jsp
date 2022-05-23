@@ -13,31 +13,46 @@
 </head>
 <body>
 
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
+    <a href="#">Notes</a>
+    <a href="#">Tasks</a>
+    <a href="#">Archive</a>
+</div>
 
-<input class = "add" type="image" src="/pages/assets/Plus.svg" alt="">
+<h1>Notes</h1>
+<!-- Sidenav menu -->
 
-<img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
-
-<h1 class="head-text">Notes</h1>
-<input type="checkbox" id="nav-toggle" hidden >
-
-<nav class="nav">
-    <label for="nav-toggle" class="nav-toggle" onclick></label>
-    <ul>
-        <li><a href="#1">Notes</a>
-        <li><a href="#2">Tasks</a>
-        <li><a href="#3">Archive</a>
-    </ul>
-</nav>
+    <img class="menu-but" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
 
 
+<!-- All page content here -->
+<div id="main">
 
 
+    <img class="add" src="/pages/assets/Plus.svg" alt="New note">
+    <img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
+
+
+</div>
+
+<script>
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "400px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
 
 <!--
 <button onclick="location.href='/EditNote'">Edit Note</button>
     <button onclick="location.href='/Login'">Exit</button>
  -->
+
 </body>
 </html>
 
