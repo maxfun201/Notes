@@ -16,7 +16,7 @@
 
 <img class="icon" src="/pages/assets/Menu.svg" alt="MENU" >
 <h1 class="head-text">Edit note</h1>
-<img class="cross" src="/pages/assets/Plus.svg" alt="CLOSE">
+<img class="cross" src="/pages/assets/Plus.svg" onclick="location.href='/Notes'" alt="CLOSE">
 
 <div class="edit-window">
     <input type="text" class="element-name" id="elementName" placeholder="Note name">

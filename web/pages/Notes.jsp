@@ -14,10 +14,18 @@
 <body>
 
 <div id="mySidenav" class="sidenav">
+    <div class="user-box">
+        <img class="user-icon" src="/pages/assets/Profile.svg" alt="Usr">
+        <img class="user-exit" src="/pages/assets/Exit.svg" onclick="location.href='/LogIn'" alt="Exit">
+        <p>username</p>
+
+    </div>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
-    <a href="#">Notes</a>
-    <a href="#">Tasks</a>
-    <a href="#">Archive</a>
+    <div class="links-box">
+        <a class="active-page">Notes</a>
+        <a href="#">Tasks</a>
+        <a href="#">Archive</a>
+    </div>
 </div>
 
 <h1>Notes</h1>
@@ -30,28 +38,45 @@
 <div id="main">
 
 
-    <img class="add" src="/pages/assets/Plus.svg" alt="New note">
+    <img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditNote'" alt="New note">
     <img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
 
+    <div class="stickers-box">
+        <%-- placeholder stickers  --%>
+        <div class="sticker">
+            <h1>Name</h1>
+            <p>Sample text sample text sample text sample text</p>
+        </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+            <div class="sticker">
+                <h1>Name</h1>
+                <p>Sample text sample text sample text sample text</p>
+            </div>
+
+    </div>
 
 </div>
 
 <script>
-    /* Set the width of the side navigation to 250px */
     function openNav() {
-        document.getElementById("mySidenav").style.width = "400px";
+        document.getElementById("mySidenav").style.width = "350px";
     }
 
-    /* Set the width of the side navigation to 0 */
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
 </script>
-
-<!--
-<button onclick="location.href='/EditNote'">Edit Note</button>
-    <button onclick="location.href='/Login'">Exit</button>
- -->
 
 </body>
 </html>
