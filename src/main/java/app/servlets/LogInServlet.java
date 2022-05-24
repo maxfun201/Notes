@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.sql.*;
 
 public class LogInServlet extends HttpServlet {
+    public boolean loggedIn = false;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("pages/LogIn.jsp");
@@ -57,7 +59,10 @@ public class LogInServlet extends HttpServlet {
             }
             if(!name_flag) req.setAttribute("name_error", "true");
             if(!pass_flag && name_flag) req.setAttribute("pass_error", "true");
-            if(name_flag && pass_flag) req.setAttribute("login", "true");
+            if(name_flag && pass_flag) {
+                req.setAttribute("login", "true");
+                loggedIn = true;
+            }
 
         }
         catch (ClassNotFoundException e){
