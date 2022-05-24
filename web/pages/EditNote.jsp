@@ -13,19 +13,38 @@
 </head>
 <body>
 
+<div id="mySidenav" class="sidenav">
+    <div class="user-box">
+        <img class="user-icon" src="/pages/assets/Profile.svg" alt="Usr">
+        <img class="user-exit" src="/pages/assets/Exit.svg" onclick="location.href='/LogIn'" alt="Exit">
+        <p>username</p>
 
-<img class="icon" src="/pages/assets/Menu.svg" alt="MENU" >
-<h1 class="head-text">Edit note</h1>
+    </div>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
+    <div class="links-box">
+        <a onclick="location.href='/Notes'">Notes</a>
+        <a href="#">Tasks</a>
+        <a href="#">Archive</a>
+    </div>
+</div>
+
+<img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
+<h1>Edit note</h1>
 <img class="cross" src="/pages/assets/Plus.svg" onclick="location.href='/Notes'" alt="CLOSE">
+<img class="left-bottom" src="/pages/assets/EditNotesPlant.png" alt="">
 
 <div class="edit-window">
-    <input type="text" class="element-name" id="elementName" placeholder="Note name">
+    <input type="text" class="element-name" id="elementName" placeholder="Note name" maxlength="15">
     <br/>
-    <textarea class="element-text" id="elementText" cols="40" rows="12" placeholder="Note text"></textarea>
+    <textarea class="element-text" id="elementText" cols="26" rows="5" maxlength="130" placeholder="Note text"></textarea>
     <br/>
     <div class="bottom-buttons">
-        <div class="color-choose" >
-            <div class="circle" id="changeColor" onclick="showChoose()"></div>
+        <span>
+            <button class="save-button" type="button" onclick="location.href='/Notes'">
+                <div class="text">SAVE</div>
+            </button>
+            <div class="color-choose">
+                <div class="circle" id="changeColor" onclick="showChoose()"></div>
                 <div class="color-content" id="colorContent">
                     <span class="white-choose" onclick="toColor('white')"></span>
                     <span class="pink-choose" onclick="toColor('pink')"></span>
@@ -36,10 +55,8 @@
                     <span class="blue-choose" onclick="toColor('blue')"></span>
                     <span class="violet-choose" onclick="toColor('violet')"></span>
                 </div>
-        </div>
-        <button type="button">
-            SAVE
-        </button>
+            </div>
+        </span>
     </div>
 </div>
 
@@ -90,6 +107,14 @@
         document.getElementById("elementText").style.backgroundColor = color;
         document.getElementById("colorContent").style.visibility = "hidden";
         show = false;
+    }
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "350px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
     }
 
 </script>
