@@ -84,12 +84,13 @@ article{
 .dots{
     width: 24px;
     float: right;
-    /*visibility: hidden;*/
+    visibility: hidden;
 }
 
-/*.sticker .dots:hover~>{*/
-/*    visibility: visible;*/
-/*}*/
+.dots-block {
+    width: 0;
+    height: 50px;
+}
 
 h2{
     margin-top: 3px;
