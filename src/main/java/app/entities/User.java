@@ -1,24 +1,36 @@
 package app.entities;
 
 public class User {
-    private String name;
+    private int id;
+    private String login;
     private String password;
+    private ROLE role;
 
     public User() {
 
     }
 
-    public User(String name, String password){
-        this.name = name;
+    public User(int id, String login, String password, ROLE role){
+        this.id = id;
+        this.login = login;
         this.password = password;
+        this.role = role;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String name) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -29,13 +41,21 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString(){
-        return "User{" +
-                "name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public ROLE getRole() {
+        return role;
     }
+
+    public void setRole(ROLE role) {
+        this.role = role;
+    }
+
+//    @Override
+//    public String toString(){
+//        return "User{" +
+//                "name='" + login + '\'' +
+//                ", password='" + password + '\'' +
+//                '}';
+//    }
 
     @Override
     public boolean equals(Object o){
@@ -44,14 +64,18 @@ public class User {
 
         User user = (User) o;
 
-        if(name != null ? !name.equals(user.name) : user.name != null) return false;
+        if(login != null ? !login.equals(user.login) : user.login != null) return false;
         return password != null ? password.equals(user.password) : user.password == null;
     }
 
     @Override
     public int hashCode(){
-        int result = name != null ? name.hashCode() : 0;
+        int result = login != null ? login.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
+    }
+
+    public enum ROLE{
+        User, Guest
     }
 }
