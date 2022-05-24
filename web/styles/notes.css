@@ -71,24 +71,34 @@ h1 {
     background: #ffcf71;
 }
 
+article{
+    display: inline-table;
+    margin: 20px;
+    height: 180px;
+    width: 180px;
+    color: black;
+    padding: 10px;
+    background: #ffcf71;
+}
+
 .dots{
     width: 24px;
     float: right;
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 /*.sticker .dots:hover~>{*/
 /*    visibility: visible;*/
 /*}*/
 
-.sticker h1{
+h2{
     margin-top: 3px;
     font-size: 24px;
     font-weight: bold;
     margin-left: 24px;
 }
 
-.sticker p{
+h3{
     font-size: 18px;
     font-weight: normal;
 }
