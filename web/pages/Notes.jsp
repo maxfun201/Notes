@@ -9,7 +9,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="/styles/notes.css">
-    <link rel="script" href="script.js">
     <title>Notes</title>
 </head>
 <body>
@@ -152,9 +151,6 @@
 </div>
 
 <script>
-    // import uuid from 'uuid/v4';
-
-    // document.body.onload = addNotes;
 
     function openNav() {
         document.getElementById("mySidenav").style.width = "350px";
