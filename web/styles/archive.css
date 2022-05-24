@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:300);
+
+body {
+    font-size: 20px;
+    background: #2F2F2F;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    color: White;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.right-bottom {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    width: 180px;
+    max-width: 25%;
+    bottom: 5%;
+    right: 3%;
+}
+.menu-button{
+    /*border: 2px dashed red;*/
+    position: absolute;
+    top: 6%;
+    left: 3%;
+    width: 60px;
+    height: 60px;
+}
+
+.menu-button:hover {
+    cursor: pointer;
+}
+
+.add {
+    z-index: 1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+.stickers-box{
+    /*border: 2px dashed red;*/
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+.sticker{
+    display: inline-table;
+    margin: 20px;
+    height: 180px;
+    width: 180px;
+    color: black;
+    padding: 10px;
+    background: #ffcf71;
+}
+
+.dots{
+    width: 24px;
+    float: right;
+    visibility: hidden;
+}
+
+/*.sticker .dots:hover~>{*/
+/*    visibility: visible;*/
+/*}*/
+
+.sticker h1{
+    margin-top: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.sticker p{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #848484;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; /* animation */
+}
+
+.sidenav .user-box{
+    background: #2F2F2F;
+    width: auto;
+    height: 50px;
+    margin: 0px 25px;
+}
+
+.user-icon{
+    float: left;
+    margin: 5px;
+    height: 40px;
+}
+
+.sidenav .user-box p{
+    text-align: center;
+    font-size: 24px;
+    padding-top: 12px;
+}
+
+.user-exit{
+    float:right;
+    margin: 5px;
+    height: 40px;
+}
+
+.user-exit:hover{
+    cursor: pointer;
+    fill: #ffcf71;
+}
+
+/* navigation menu links */
+.sidenav a {
+    margin: 30px;
+    text-decoration: none;
+    font-size: 35px;
+    color: white;
+    display: block;
+}
+
+.sidenav .active-page{
+    color: #b3b3b3;
+}
+
+.sidenav a:hover {
+    color: #ffcf71;
+}
+
+.sidenav .links-box {
+    position: absolute;
+    top: 25%;
+}
+
+/* Close button */
+.sidenav .closebtn {
+    position: absolute;
+    top: 30%;
+    right: 25px;
+    font-size: 80px;
+    margin-left: 50px;
+}
+
+/* Page content inside */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}

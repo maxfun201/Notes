@@ -24,8 +24,8 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
     <div class="links-box">
         <a class="active-page">Notes</a>
-        <a href="#">Tasks</a>
-        <a href="#">Archive</a>
+        <a href="/pages/Tasks.jsp">Tasks</a>
+        <a href="/pages/Archive.jsp">Archive</a>
     </div>
 </div>
 
