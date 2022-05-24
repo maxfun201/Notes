@@ -105,6 +105,19 @@
                 const elementName = document.getElementById(stick.id);
                 elementName.appendChild(dots);
 
+                stick.addEventListener("mouseover", function( event ) {
+                    dots.style.visibility = 'visible';
+                }, false);
+
+                stick.addEventListener("mouseout", function( event ) {
+                    dots.style.visibility = 'hidden';
+                }, false);
+
+                // const block = document.createElement("div");
+                // block.className = 'dots-block';
+                // block.id = 'b' + note.id;
+                // elementName.appendChild(block);
+
                 const head = document.createElement("h2");
                 const name = document.createTextNode(note.name);
                 head.appendChild(name);
