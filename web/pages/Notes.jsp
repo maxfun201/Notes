@@ -9,6 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/styles/notes.css">
+    <link rel="script" href="script.js">
     <title>Notes</title>
 </head>
 <body>
@@ -41,39 +42,107 @@
     <img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditNote'" alt="New note">
     <img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
 
-    <div class="stickers-box">
+    <div class="stickers-box" id="stickerBox">
         <%-- placeholder stickers  --%>
-        <div class="sticker">
-            <img class="dots" src="/pages/assets/Dots.svg" alt="***">
-            <h1>Name</h1>
-            <p>Sample text sample text sample text sample text</p>
-        </div>
-            <div class="sticker">
-                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
-                <h1>Name</h1>
-                <p>Sample text sample text sample text sample text</p>
-            </div>
-            <div class="sticker">
-                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
-                <h1>Name</h1>
-                <p>Sample text sample text sample text sample text</p>
-            </div>
-            <div class="sticker">
-                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
-                <h1>Name</h1>
-                <p>Sample text sample text sample text sample text</p>
-            </div>
-            <div class="sticker">
-                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
-                <h1>Name</h1>
-                <p>Sample text sample text sample text sample text</p>
-            </div>
+        <script>
 
+            var count = 0;
+            class Note {
+                constructor(name, text, color) {
+                    this.id = count;
+                    this.name = name;
+                    this.text = text;
+                    this.color = color;
+                    count ++;
+                }
+            }
+
+            function toColor(color) {
+                switch (color) {
+                    case 'white':
+                        break;
+                    case 'pink':
+                        color = '#FFA3B9';
+                        break;
+                    case 'yellow':
+                        color = '#F0FF95';
+                        break;
+                    case 'aqua':
+                        color = '#BAEDF0';
+                        break;
+                    case 'orange':
+                        color = '#FFD18C';
+                        break;
+                    case 'green':
+                        color = '#9FEEB5';
+                        break;
+                    case 'blue':
+                        color = '#9D96E9';
+                        break;
+                    case 'violet':
+                        color = '#E7C0FF';
+                        break;
+                    default:
+                        break;
+                }
+                return color;
+            }
+
+            function createNote(note) {
+                const stick = document.createElement("article");
+                stick.id = note.id;
+                const color = toColor(note.color);
+                stick.style.backgroundColor = color;
+                const element = document.getElementById("stickerBox");
+                element.appendChild(stick);
+
+                //<img class="dots" src="/pages/assets/Dots.svg" alt="***">
+
+                const dots = document.createElement("img");
+                dots.className = 'dots';
+                dots.id = 'd' + note.id;
+                dots.src = '/pages/assets/Dots.svg';
+                const elementName = document.getElementById(stick.id);
+                elementName.appendChild(dots);
+
+                const head = document.createElement("h2");
+                const name = document.createTextNode(note.name);
+                head.appendChild(name);
+                elementName.appendChild(head);
+
+                const content = document.createElement("h3");
+                const text = document.createTextNode(note.text);
+                content.appendChild(text);
+                elementName.appendChild(content);
+            }
+
+            let note1 = new Note ('Shopping', 'apple, orange, grape, potato, cheese', 'pink');
+            let note2 = new Note ('Walking','go to park and have some chocolate ice cream','green');
+            let note3 = new Note ('','','aqua');
+            let note4 = new Note ('','','violet');
+            let note5 = new Note ('','','yellow');
+            let note6 = new Note ('','','blue');
+            let note7 = new Note ('','','white');
+            let note8 = new Note ('','','orange');
+
+            createNote(note1);
+            createNote(note2);
+            createNote(note3);
+            createNote(note4);
+            createNote(note5);
+            createNote(note6);
+            createNote(note7);
+            createNote(note8);
+        </script>
     </div>
 
 </div>
 
 <script>
+    // import uuid from 'uuid/v4';
+
+    // document.body.onload = addNotes;
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "350px";
     }
