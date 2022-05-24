@@ -31,7 +31,7 @@
 <h1>Notes</h1>
 <!-- Sidenav menu -->
 
-    <img class="menu-but" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
+    <img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
 
 
 <!-- All page content here -->

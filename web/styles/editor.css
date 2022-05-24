@@ -1,19 +1,37 @@
-body
-{
-    margin: 0;
-    padding: 0;
-    font-family: Impact;
-    /* currently doesn't change the font. Needs configuring */
+@import url(https://fonts.googleapis.com/css?family=Inter:300);
+
+body {
+    font-size: 20px;
     background: #2F2F2F;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
     color: White;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.left-bottom {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    width: 180px;
 }
 
 .icon
 {
-    height: auto;
-    width: auto;
-    max-width: 50px;
-    max-height: 50px;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 60px;
+    height: 60px;
 }
 
 .head-text
@@ -22,35 +40,39 @@ body
     text-align: center;
 }
 
-/* rotates the plus symbol to reuse it as an exit symbol */
 .cross {
-    height: auto;
-    width: auto;
-    max-width: 50px;
-    max-height: 50px;
+    z-index: 1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
     transform: rotate(45deg);
-    color: White;
+}
+
+.cross:hover {
+    cursor: pointer;
 }
 
 .edit-window
 {
-    width: 300px;
-    padding: 0px;
-    margin: 0% auto 0;
+    width: 360px;
     text-align: center;
-
-}
-
-.bottom-buttons
-{
-    text-align: right;
+    margin:auto;
+    padding-right: 60px;
 }
 
 .circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
     background: white;
+    z-index: 100;
+}
+
+.circle , .white-choose , .pink-choose , .orange-choose , .green-choose , .aqua-choose , .yellow-choose , .violet-choose , .blue-choose:hover {
+    cursor: pointer;
 }
 
 .white-choose {
@@ -102,7 +124,6 @@ body
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    margin: 10px;
     background: #F0FF95;
     margin: 5px;
     display: inline-flex;
@@ -112,17 +133,15 @@ body
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    margin: 10px;
     background: #E7C0FF;
     margin: 5px;
     display: inline-flex;
 }
 
- .blue-choose {
+.blue-choose {
      width: 50px;
      height: 50px;
      border-radius: 25px;
-     margin: 10px;
      background: #9D96E9;
      margin: 5px;
      display: inline-flex;
@@ -130,27 +149,160 @@ body
 
 .color-choose
 {
-    position: relative;
-    display: inline-block;
+    margin-left: 20px;
+    z-index: 100;
 }
 
 .color-content
 {
-    position: relative;
-    margin-right: -1000px;
     height: 130px;
-    width: 250px;
+    width: 260px;
     padding: 5px;
     visibility: hidden;
     z-index: 1;
     background-color: #848484;
     overflow-x: hidden;
-
+    float:top;
 }
 
+.element-name {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    background: white;
+    outline-style: hidden;
+    font-size: 32px;
+    margin-top: 35px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    border: none;
+}
 
-/* the color picking should be moved here */
-/*.color-choose:hover .color-content*/
-/*{*/
-/*    display: block;*/
-/*}*/
+.element-text {
+    resize: none;
+    width: 100%;
+    height: 38%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 50px;
+    color: #000000;
+    background: white;
+    margin: 20px;
+    z-index: -2;
+    border: none;
+}
+
+.save-button {
+    text-align: center;
+    background: #848484;
+    width: 175px;
+    height: 60px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 77px;
+    color: #FFFFFF;
+    float: right;
+    margin-right: -20px;
+    padding:0;
+    z-index: -1;
+    border: none;
+}
+
+.save-button .text {
+    margin-top: -8px;
+}
+
+.save-button:hover {
+    color: #ffcf71;
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #848484;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; /* animation */
+}
+
+.sidenav .user-box{
+    background: #2F2F2F;
+    width: auto;
+    height: 50px;
+    margin: 0px 25px;
+}
+
+.user-icon{
+    float: left;
+    margin: 5px;
+    height: 40px;
+}
+
+.sidenav .user-box p{
+    text-align: center;
+    font-size: 24px;
+    padding-top: 12px;
+}
+
+.user-exit{
+    float:right;
+    margin: 5px;
+    height: 40px;
+}
+
+.user-exit:hover{
+    cursor: pointer;
+    fill: #ffcf71;
+}
+
+.menu-button{
+    /*border: 2px dashed red;*/
+    position: absolute;
+    top: 6%;
+    left: 3%;
+    width: 60px;
+    height: 60px;
+}
+
+.menu-button:hover {
+    cursor: pointer;
+}
+
+/* navigation menu links */
+.sidenav a {
+    margin: 30px;
+    text-decoration: none;
+    font-size: 35px;
+    color: white;
+    display: block;
+}
+
+.sidenav .active-page{
+    color: #b3b3b3;
+}
+
+.sidenav a:hover {
+    color: #ffcf71;
+}
+
+.sidenav .links-box {
+    position: absolute;
+    top: 25%;
+}
+
+/* Close button */
+.sidenav .closebtn {
+    position: absolute;
+    top: 30%;
+    right: 25px;
+    font-size: 80px;
+    margin-left: 50px;
+}
