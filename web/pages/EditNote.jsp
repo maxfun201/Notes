@@ -24,57 +24,74 @@
     <textarea class="element-text" id="elementText" cols="40" rows="12" placeholder="Note text"></textarea>
     <br/>
     <div class="bottom-buttons">
-        <div class="color-choose">
-            <div class="circle" id="changeColor"></div>
-            <div class="color-content">
-                <p>options</p>
-            </div>
+        <div class="color-choose" >
+            <div class="circle" id="changeColor" onclick="showChoose()"></div>
+                <div class="color-content" id="colorContent">
+                    <span class="white-choose" onclick="toColor('white')"></span>
+                    <span class="pink-choose" onclick="toColor('pink')"></span>
+                    <span class="orange-choose" onclick="toColor('orange')"></span>
+                    <span class="aqua-choose" onclick="toColor('aqua')"></span>
+                    <span class="yellow-choose" onclick="toColor('yellow')"></span>
+                    <span class="green-choose" onclick="toColor('green')"></span>
+                    <span class="blue-choose" onclick="toColor('blue')"></span>
+                    <span class="violet-choose" onclick="toColor('violet')"></span>
+                </div>
         </div>
-        <button class="save-but" type="button">
+        <button type="button">
             SAVE
         </button>
     </div>
 </div>
 
-<%-- temporary solution. Should be implemented as a drop-down menu from color-choose circle --%>
-<!--<button id="toPink">Pink</button>-->
-<button id="toPink">Pink</button>
-<button id="toGreen">Green</button>
-<button id="toBlue">Blue</button>
-<button id="toOrange">Orange</button>
-<button id="toWhite">White</button>
-
-
 <script>
+    var show = false;
 
-    document.getElementById("toPink").onclick = function () {
-        document.getElementById("changeColor").style.backgroundColor = 'FFA3B9';
-        document.getElementById("elementName").style.backgroundColor = 'FFA3B9';
-        document.getElementById("elementText").style.backgroundColor = 'FFA3B9';
-    }
+    function showChoose(){
+        if (!show) {
+            document.getElementById("colorContent").style.visibility = "visible";
+            show = true;
+        } else {
+            document.getElementById("colorContent").style.visibility = "hidden";
+            show = false;
+        }
 
-    document.getElementById("toGreen").onclick = function () {
-        document.getElementById("changeColor").style.backgroundColor = '9FEEB5';
-        document.getElementById("elementName").style.backgroundColor = '9FEEB5';
-        document.getElementById("elementText").style.backgroundColor = '9FEEB5';
-    }
-
-    document.getElementById("toBlue").onclick = function () {
-        document.getElementById("changeColor").style.backgroundColor = 'BAEDF0';
-        document.getElementById("elementName").style.backgroundColor = 'BAEDF0';
-        document.getElementById("elementText").style.backgroundColor = 'BAEDF0';
     }
 
-    document.getElementById("toOrange").onclick = function () {
-        document.getElementById("changeColor").style.backgroundColor = 'FFD18C';
-        document.getElementById("elementName").style.backgroundColor = 'FFD18C';
-        document.getElementById("elementText").style.backgroundColor = 'FFD18C';
+    function toColor(color) {
+        switch (color) {
+            case 'white':
+                break;
+            case 'pink':
+                color = '#FFA3B9';
+                break;
+            case 'yellow':
+                color = '#F0FF95';
+                break;
+            case 'aqua':
+                color = '#BAEDF0';
+                break;
+            case 'orange':
+                color = '#FFD18C';
+                break;
+            case 'green':
+                color = '#9FEEB5';
+                break;
+            case 'blue':
+                color = '#9D96E9';
+                break;
+            case 'violet':
+                color = '#E7C0FF';
+                break;
+            default:
+                break;
+        }
+        document.getElementById("changeColor").style.backgroundColor = color;
+        document.getElementById("elementName").style.backgroundColor = color;
+        document.getElementById("elementText").style.backgroundColor = color;
+        document.getElementById("colorContent").style.visibility = "hidden";
+        show = false;
     }
-    document.getElementById("toWhite").onclick = function () {
-        document.getElementById("changeColor").style.backgroundColor = 'FFFFFF';
-        document.getElementById("elementName").style.backgroundColor = 'FFFFFF';
-        document.getElementById("elementText").style.backgroundColor = 'FFFFFF';
-    }
+
 </script>
 
 <%-- color should be stored with names and text, change accordingly on other pages --%>

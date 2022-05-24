@@ -1,23 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Inter:300);
-
 body
 {
-    font-family: 'Inter';
-    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-family: Impact;
     /* currently doesn't change the font. Needs configuring */
     background: #2F2F2F;
     color: White;
-    font-size: 20px;
-    font-weight: 700;
 }
 
 .icon
 {
-    position: absolute;
-    top: 5%;
-    left: 3%;
-    width: 60px;
-    height: 60px;
+    height: auto;
+    width: auto;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .head-text
@@ -28,18 +24,17 @@ body
 
 /* rotates the plus symbol to reuse it as an exit symbol */
 .cross {
-    width: 70px;
-    height: 70px;
+    height: auto;
+    width: auto;
+    max-width: 50px;
+    max-height: 50px;
     transform: rotate(45deg);
     color: White;
-    float: right;
-    margin-right: 3%;
-
 }
 
 .edit-window
 {
-    width: 60%;
+    width: 300px;
     padding: 0px;
     margin: 0% auto 0;
     text-align: center;
@@ -54,12 +49,84 @@ body
 .circle {
     width: 50px;
     height: 50px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
     border-radius: 25px;
-    background: lightgray;
-
+    background: white;
 }
+
+.white-choose {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: white;
+    display: inline-flex;
+}
+
+.pink-choose {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #FFA3B9;
+    display: inline-flex;
+}
+
+.orange-choose {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #FFD18C;
+    display: inline-flex;
+}
+
+.green-choose {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #9FEEB5;
+    margin: 5px;
+    display: inline-flex;
+}
+
+.aqua-choose {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #BAEDF0;
+    margin: 5px;
+    display: inline-flex;
+}
+
+.yellow-choose {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 10px;
+    background: #F0FF95;
+    margin: 5px;
+    display: inline-flex;
+}
+
+.violet-choose {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 10px;
+    background: #E7C0FF;
+    margin: 5px;
+    display: inline-flex;
+}
+
+ .blue-choose {
+     width: 50px;
+     height: 50px;
+     border-radius: 25px;
+     margin: 10px;
+     background: #9D96E9;
+     margin: 5px;
+     display: inline-flex;
+ }
 
 .color-choose
 {
@@ -69,57 +136,21 @@ body
 
 .color-content
 {
-    display: none;
-    position: absolute;
-    background-color: DarkGray;
-    min-width: 160px;
-    padding: 12px 16px;
+    position: relative;
+    margin-right: -1000px;
+    height: 130px;
+    width: 250px;
+    padding: 5px;
+    visibility: hidden;
     z-index: 1;
-}
-
-h1 {
-    font-size: 50px;
-    margin-bottom: 30px;
-    text-align: center;
-    margin-top: 35px;
-}
-.element-name {
-    width: 1000px;
-    height: 10%;
-    text-align: center;
-    background: #848484;
-    font-size: 50px;
-    margin-bottom: 30px;
-    margin-top: 35px;
+    background-color: #848484;
+    overflow-x: hidden;
 
 }
 
-.element-text {
-    width: 1000px;
-    height: 45%;
-    text-align: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 58px;
-    color: #000000;
-}
 
-.save-but {
-    text-align: center;
-    background: #848484;
-    width: 200px;
-    height: 70px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 77px;
-    color: #FFFFFF;
-    margin-top: 10px;
-    margin-left: 10px;
-}
 /* the color picking should be moved here */
-.color-choose:hover .color-content
-{
-    display: block;
-}
+/*.color-choose:hover .color-content*/
+/*{*/
+/*    display: block;*/
+/*}*/

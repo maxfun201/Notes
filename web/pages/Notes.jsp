@@ -44,22 +44,27 @@
     <div class="stickers-box">
         <%-- placeholder stickers  --%>
         <div class="sticker">
+            <img class="dots" src="/pages/assets/Dots.svg" alt="***">
             <h1>Name</h1>
             <p>Sample text sample text sample text sample text</p>
         </div>
             <div class="sticker">
+                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
                 <h1>Name</h1>
                 <p>Sample text sample text sample text sample text</p>
             </div>
             <div class="sticker">
+                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
                 <h1>Name</h1>
                 <p>Sample text sample text sample text sample text</p>
             </div>
             <div class="sticker">
+                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
                 <h1>Name</h1>
                 <p>Sample text sample text sample text sample text</p>
             </div>
             <div class="sticker">
+                <img class="dots" src="/pages/assets/Dots.svg" alt="***">
                 <h1>Name</h1>
                 <p>Sample text sample text sample text sample text</p>
             </div>
@@ -76,6 +81,7 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
 </script>
 
 </body>
