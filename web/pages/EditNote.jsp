@@ -30,17 +30,20 @@
                 <p>options</p>
             </div>
         </div>
-        <button type="button">
+        <button class="save-but" type="button">
             SAVE
         </button>
     </div>
 </div>
 
 <%-- temporary solution. Should be implemented as a drop-down menu from color-choose circle --%>
+<!--<button id="toPink">Pink</button>-->
 <button id="toPink">Pink</button>
 <button id="toGreen">Green</button>
 <button id="toBlue">Blue</button>
 <button id="toOrange">Orange</button>
+<button id="toWhite">White</button>
+
 
 <script>
 
@@ -66,6 +69,11 @@
         document.getElementById("changeColor").style.backgroundColor = 'FFD18C';
         document.getElementById("elementName").style.backgroundColor = 'FFD18C';
         document.getElementById("elementText").style.backgroundColor = 'FFD18C';
+    }
+    document.getElementById("toWhite").onclick = function () {
+        document.getElementById("changeColor").style.backgroundColor = 'FFFFFF';
+        document.getElementById("elementName").style.backgroundColor = 'FFFFFF';
+        document.getElementById("elementText").style.backgroundColor = 'FFFFFF';
     }
 </script>
 
