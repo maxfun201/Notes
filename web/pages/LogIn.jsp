@@ -36,10 +36,6 @@
                      out.println("Wrong password");
                  }
                  else out.println("");
-                 if(request.getAttribute("login") != null){
-                     out.println("Welcome");
-                 }
-                 else out.println("");
              %>
          </form>
          <p class="message">Not registered? <a onclick="location.href='/add'">Create an account</a></p>
