@@ -12,7 +12,6 @@
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
         <url-pattern>/LogIn</url-pattern>
-        <url-pattern>/Notes</url-pattern>
     </filter-mapping>
 
     <servlet>

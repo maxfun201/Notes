@@ -15,6 +15,8 @@ import static java.util.Objects.nonNull;
 
 public class AuthFilter implements Filter {
 
+    public static int ID = 0;
+
     @Override
     public void init(FilterConfig fConfig) throws ServletException {
 
@@ -33,43 +35,43 @@ public class AuthFilter implements Filter {
         //получение объекта
         @SuppressWarnings("unchecked")
         final AtomicReference<UserDAO> dao = (AtomicReference<UserDAO>) req.getServletContext().getAttribute("dao");
-//        Connection connection = null;
-//        Statement statement = null;
-//        ResultSet resultSet = null;
-//        try{
-//            Class.forName("org.postgresql.Driver");
-//            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers", "postgres", "12345");
-//            statement = connection.createStatement();
-//
-//            resultSet = statement.executeQuery("select * from users");
-//            while(resultSet.next()){
-//                String currentName = resultSet.getString("login");
-//                if(currentName.equals(login)){
-//                    String currentPassword = resultSet.getString("password");
-//                    if(currentPassword.equals(password)){
-//                        req.setAttribute("login", "true");
-//                        user_id = resultSet.getInt("userid");
-//                        System.out.println(user_id);
-//                        break;
-//                    }
-//                }
-//            }
-//        }
-//        catch (ClassNotFoundException e){
-//            e.printStackTrace();
-//        }
-//        catch(SQLException e){
-//            e.printStackTrace();
-//        }
-//        finally {
-//            try {
-//                connection.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
 
         final HttpSession session = req.getSession();
+
+        //
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try{
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NoteServiceUsers", "postgres", "12345");
+            statement = connection.createStatement();
+            req.setAttribute("error", null);
+            resultSet = statement.executeQuery("select * from users");
+            while(resultSet.next()){
+                String currentName = resultSet.getString("login");
+                if(currentName.equals(login)){
+                    String currentPassword = resultSet.getString("password");
+                    if(currentPassword.equals(password)){
+                        ID = resultSet.getInt("userid");
+                        break;
+                    }
+                }
+            }
+        }
+        catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
         if(nonNull(session) && nonNull(session.getAttribute("log_name")) && nonNull(session.getAttribute("log_pass"))) {
 
@@ -86,12 +88,15 @@ public class AuthFilter implements Filter {
 
             moveToNotes(req, resp, role);
         }
-        else moveToNotes(req, resp, User.ROLE.Guest);
+        else {
+            moveToNotes(req, resp, User.ROLE.Guest);
+        }
     }
 
     private void moveToNotes(final HttpServletRequest req, HttpServletResponse resp, final User.ROLE role) throws ServletException, IOException{
         if(role.equals(User.ROLE.User)){
-            req.getRequestDispatcher("/pages/Notes.jsp").forward(req, resp);
+            //req.getRequestDispatcher("/pages/Notes.jsp").forward(req, resp);
+            resp.sendRedirect("/Notes");
         }
         else if(role.equals(User.ROLE.Guest)){
             req.getRequestDispatcher("/pages/LogIn.jsp").forward(req, resp);
