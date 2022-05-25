@@ -7,34 +7,48 @@ body {
     font-style: normal;
     font-weight: 700;
     color: White;
+    overflow-x: hidden;
+}
+
+.main {
+
 }
 
 h1 {
+    position: absolute;
+    width: 100%;
     font-size: 50px;
     margin-bottom: 30px;
     text-align: center;
-    margin-top: 35px;
+    margin-top: 20px;
+    z-index: -1;
 }
 
 .menu-button{
     /*border: 2px dashed red;*/
-    position: absolute;
-    top: 6%;
-    left: 3%;
+    position: sticky;
+    display: inline-block;
+    top: 0;
+    float: left;
+    padding: 25px 5% 10px;
     width: 60px;
     height: 60px;
+
 }
 
 .menu-button:hover {
     cursor: pointer;
 }
 
+
 .add {
     z-index: 1;
     /*border: 2px dashed red;*/
-    position: absolute;
-    top: 5%;
-    right: 3%;
+    position: sticky;
+    top: 0;
+    float: right;
+    padding-top: 20px;
+    padding-right: 5%;
     width: 70px;
     height: 70px;
 }
@@ -48,16 +62,29 @@ h1 {
     /*border: 2px dashed red;*/
     position: absolute;
     width: 180px;
+    max-height: 500px;
+    max-width: 25%;
+    bottom: 5%;
+    right: 3%;
+}
+
+.cacti {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    width: 120px;
     max-width: 25%;
     bottom: 5%;
     right: 3%;
 }
 
 .stickers-box{
-    /*border: 2px dashed red;*/
+    border: 2px dashed red;
     width: auto;
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 100px;
+    padding-bottom: 10px;;
     text-align: center;
 }
 
@@ -87,6 +114,19 @@ article{
     visibility: hidden;
 }
 
+.dots-task{
+    width: 24px;
+    float: right;
+    visibility: hidden;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: -35px
+}
+
+.task-text {
+    float: left;
+}
+
 .dots-block {
     width: 0;
     height: 50px;
@@ -103,6 +143,51 @@ h3{
     font-size: 18px;
     font-weight: normal;
 }
+
+figure{
+    display: inline-block;
+    margin: 5px 0 10px 0;
+    height: 30px;
+    width: 95%;
+    color: black;
+    padding: 10px;
+}
+
+h4 {
+    margin-top: 6px;
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: normal;
+    float: left;
+    width: 20%;
+    max-width: 20%;
+    height: 30px;
+    text-align: center;
+    background: yellow;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+h5 {
+    margin-top: 6px;
+    padding: 10px 0 10px 10px;
+    font-size: 24px;
+    font-weight: normal;
+    float: right;
+    height: 30px;
+    width: 75%;
+    text-align: left;
+    background: #9D96E9;
+
+}
+
+h5 div {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 
 .sidenav {
     height: 100%;

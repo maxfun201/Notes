@@ -23,7 +23,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
     <div class="links-box">
         <a onclick="location.href='/Notes'">Notes</a>
-        <a href="#">Tasks</a>
+        <a onclick="location.href='/Tasks'">Tasks</a>
         <a href="#">Archive</a>
     </div>
 </div>
