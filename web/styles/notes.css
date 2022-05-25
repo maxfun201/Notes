@@ -10,10 +10,6 @@ body {
     overflow-x: hidden;
 }
 
-.main {
-
-}
-
 h1 {
     position: absolute;
     width: 100%;
@@ -57,6 +53,25 @@ h1 {
     cursor: pointer;
 }
 
+.cross {
+    z-index: 1;
+    /*border: 2px dashed red;*/
+    position: sticky;
+    top: 0;
+    float: right;
+    padding-top: 20px;
+    padding-right: 5%;
+    width: 70px;
+    height: 70px;
+    transform: rotate(45deg);
+    margin-top: 25px;
+    margin-right: 5px;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
 .right-bottom {
     z-index: -1;
     /*border: 2px dashed red;*/
@@ -79,7 +94,7 @@ h1 {
 }
 
 .stickers-box{
-    border: 2px dashed red;
+    /*border: 2px dashed red;*/
     width: auto;
     margin-left: 5%;
     margin-right: 5%;

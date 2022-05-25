@@ -41,19 +41,19 @@
 
 <div id="main">
 
-        <div class="stickers-box" id="stickerBox">
+        <div class="stickers-box" id="taskBox">
             <%-- placeholder stickers  --%>
 
             <script>
 
-                var count = 0;
-                class Note {
+                var count_ = 0;
+                class Task {
                     constructor(name, text, color) {
-                        this.id = count;
+                        this.id = count_;
                         this.name = name;
                         this.text = text;
                         this.color = color;
-                        count ++;
+                        count_ ++;
                     }
                 }
 
@@ -88,11 +88,11 @@
                     return color;
                 }
 
-                function createNote(note) {
-                    const stick = document.createElement("figure");
-                    stick.id = note.id;
-                    const element = document.getElementById("stickerBox");
-                    element.appendChild(stick);
+                function createTask(task) {
+                    const taskk = document.createElement("figure");
+                    taskk.id = task.id;
+                    const element = document.getElementById("taskBox");
+                    element.appendChild(taskk);
 
                     //<img class="dots" src="/pages/assets/Dots.svg" alt="***">
 
@@ -101,55 +101,55 @@
                     // block.id = 'b' + note.id;
                     // elementName.appendChild(block);
 
-                    const head = document.createElement("h4");
-                    const name = document.createTextNode(' ' + note.name + ' ');
-                    const color = toColor(note.color);
-                    head.style.backgroundColor = color;
-                    head.appendChild(name);
-                    const elementName = document.getElementById(stick.id);
-                    elementName.appendChild(head);
+                    const head_ = document.createElement("h4");
+                    const name_ = document.createTextNode(' ' + task.name + ' ');
+                    const color_ = toColor(task.color);
+                    head_.style.backgroundColor = color_;
+                    head_.appendChild(name_);
+                    const elementName_ = document.getElementById(taskk.id);
+                    elementName_.appendChild(head_);
 
-                    const content = document.createElement("h5");
-                    content.style.backgroundColor = color;
-                    elementName.appendChild(content);
+                    const content_ = document.createElement("h5");
+                    content_.style.backgroundColor = color_;
+                    elementName_.appendChild(content_);
 
-                    const text = document.createElement("div");
-                    const textCont = document.createTextNode(' ' + note.text + ' ')
-                    text.appendChild(textCont)
-                    content.appendChild(text);
+                    const text_ = document.createElement("div");
+                    const textCont_ = document.createTextNode(' ' + task.text + ' ')
+                    text_.appendChild(textCont_)
+                    content_.appendChild(text_);
 
-                    const dots = document.createElement("img");
-                    dots.className = 'dots-task';
-                    dots.id = 'd' + note.id;
-                    dots.src = '/pages/assets/Dots.svg';
-                    content.appendChild(dots);
+                    const dots_ = document.createElement("img");
+                    dots_.className = 'dots-task';
+                    dots_.id = 'd' + task.id;
+                    dots_.src = '/pages/assets/Dots.svg';
+                    content_.appendChild(dots_);
 
-                    stick.addEventListener("mouseover", function( event ) {
-                        dots.style.visibility = 'visible';
+                    taskk.addEventListener("mouseover", function( event ) {
+                        dots_.style.visibility = 'visible';
                     }, false);
 
-                    stick.addEventListener("mouseout", function( event ) {
-                        dots.style.visibility = 'hidden';
+                    taskk.addEventListener("mouseout", function( event ) {
+                        dots_.style.visibility = 'hidden';
                     }, false);
                 }
 
-                let note1 = new Note ('11/01/22', 'birthday','pink');
-                let note2 = new Note ('sat','meeting','green');
-                let note3 = new Note ('ooooooooooooooooooooooooooooo','oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo','aqua');
-                let note4 = new Note ('','','violet');
-                let note5 = new Note ('','','yellow');
-                let note6 = new Note ('','','blue');
-                let note7 = new Note ('','','white');
-                let note8 = new Note ('','','orange');
+                let task1 = new Task ('11/01/22', 'birthday','pink');
+                let task2 = new Task ('sat','meeting','green');
+                let task3 = new Task ('ooooooooooooooooooooooooooooo','oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo','aqua');
+                let task4 = new Task ('','','violet');
+                let task5 = new Task ('','','yellow');
+                let task6 = new Task ('','','blue');
+                let task7 = new Task ('','','white');
+                let task8 = new Task ('','','orange');
 
-                createNote(note1);
-                createNote(note2);
-                createNote(note3);
-                createNote(note4);
-                createNote(note5);
-                createNote(note6);
-                createNote(note7);
-                createNote(note8);
+                createTask(task1);
+                createTask(task2);
+                createTask(task3);
+                createTask(task4);
+                createTask(task5);
+                createTask(task6);
+                createTask(task7);
+                createTask(task8);
             </script>
         </div>
 
