@@ -8,11 +8,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="/styles/tasks.css">
+    <link rel="stylesheet" href="/styles/notes.css">
     <title>Tasks</title>
 </head>
 <body>
+
+
+
+    <img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
+    <img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditTask'" alt="New task">
+
 <h1>Tasks</h1>
+
+<img class="cacti" src="/pages/assets/TasksCactus.png" alt="">
 
 <div id="mySidenav" class="sidenav">
     <div class="user-box">
@@ -29,27 +37,135 @@
     </div>
 </div>
 
-<img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
+
 
 <div id="main">
 
+        <div class="stickers-box" id="taskBox">
+            <%-- placeholder stickers  --%>
 
-    <img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditNote'" alt="New note">
-    <img class="right-bottom" src="/pages/assets/TasksCactus.png" alt="">
+            <script>
 
-</div>
+                var count_ = 0;
+                class Task {
+                    constructor(name, text, color) {
+                        this.id = count_;
+                        this.name = name;
+                        this.text = text;
+                        this.color = color;
+                        count_ ++;
+                    }
+                }
 
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "350px";
-    }
+                function toColor(color) {
+                    switch (color) {
+                        case 'white':
+                            break;
+                        case 'pink':
+                            color = '#FFA3B9';
+                            break;
+                        case 'yellow':
+                            color = '#F0FF95';
+                            break;
+                        case 'aqua':
+                            color = '#BAEDF0';
+                            break;
+                        case 'orange':
+                            color = '#FFD18C';
+                            break;
+                        case 'green':
+                            color = '#9FEEB5';
+                            break;
+                        case 'blue':
+                            color = '#9D96E9';
+                            break;
+                        case 'violet':
+                            color = '#E7C0FF';
+                            break;
+                        default:
+                            break;
+                    }
+                    return color;
+                }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
+                function createTask(task) {
+                    const taskk = document.createElement("figure");
+                    taskk.id = task.id;
+                    const element = document.getElementById("taskBox");
+                    element.appendChild(taskk);
 
-</script>
+                    //<img class="dots" src="/pages/assets/Dots.svg" alt="***">
 
+                    // const block = document.createElement("div");
+                    // block.className = 'dots-block';
+                    // block.id = 'b' + note.id;
+                    // elementName.appendChild(block);
+
+                    const head_ = document.createElement("h4");
+                    const name_ = document.createTextNode(' ' + task.name + ' ');
+                    const color_ = toColor(task.color);
+                    head_.style.backgroundColor = color_;
+                    head_.appendChild(name_);
+                    const elementName_ = document.getElementById(taskk.id);
+                    elementName_.appendChild(head_);
+
+                    const content_ = document.createElement("h5");
+                    content_.style.backgroundColor = color_;
+                    elementName_.appendChild(content_);
+
+                    const text_ = document.createElement("div");
+                    const textCont_ = document.createTextNode(' ' + task.text + ' ')
+                    text_.appendChild(textCont_)
+                    content_.appendChild(text_);
+
+                    const dots_ = document.createElement("img");
+                    dots_.className = 'dots-task';
+                    dots_.id = 'd' + task.id;
+                    dots_.src = '/pages/assets/Dots.svg';
+                    content_.appendChild(dots_);
+
+                    taskk.addEventListener("mouseover", function( event ) {
+                        dots_.style.visibility = 'visible';
+                    }, false);
+
+                    taskk.addEventListener("mouseout", function( event ) {
+                        dots_.style.visibility = 'hidden';
+                    }, false);
+                }
+
+                let task1 = new Task ('11/01/22', 'birthday','pink');
+                let task2 = new Task ('sat','meeting','green');
+                let task3 = new Task ('ooooooooooooooooooooooooooooo','oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo','aqua');
+                let task4 = new Task ('','','violet');
+                let task5 = new Task ('','','yellow');
+                let task6 = new Task ('','','blue');
+                let task7 = new Task ('','','white');
+                let task8 = new Task ('','','orange');
+
+                createTask(task1);
+                createTask(task2);
+                createTask(task3);
+                createTask(task4);
+                createTask(task5);
+                createTask(task6);
+                createTask(task7);
+                createTask(task8);
+            </script>
+        </div>
+
+    </div>
+
+    <script>
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
 
 </body>
 </html>

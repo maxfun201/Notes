@@ -22,15 +22,15 @@
     </div>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
     <div class="links-box">
-        <a onclick="location.href='/Notes'">Notes</a>
-        <a href="#">Tasks</a>
-        <a href="#">Archive</a>
+        <a href="/pages/Notes.jsp">Notes</a>
+        <a href="/pages/Tasks.jsp">Tasks</a>
+        <a href="/pages/Archive.jsp">Archive</a>
     </div>
 </div>
 
 <img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
 <h1>Edit note</h1>
-<img class="cross" src="/pages/assets/Plus.svg" onclick="location.href='/Notes'" alt="CLOSE">
+<img class="cross" src="/pages/assets/Plus.svg" onclick="location.href='/pages/Notes.jsp'" alt="CLOSE">
 <img class="left-bottom" src="/pages/assets/EditNotesPlant.png" alt="">
 
 <div class="edit-window">

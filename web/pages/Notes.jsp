@@ -28,18 +28,16 @@
     </div>
 </div>
 
+<img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
+<img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditNote'" alt="New note">
 <h1>Notes</h1>
+<img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
 <!-- Sidenav menu -->
 
-    <img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
 
 
 <!-- All page content here -->
 <div id="main">
-
-
-    <img class="add" src="/pages/assets/Plus.svg" onclick="location.href='/EditNote'" alt="New note">
-    <img class="right-bottom" src="/pages/assets/NotesPlant.png" alt="">
 
     <div class="stickers-box" id="stickerBox">
         <%-- placeholder stickers  --%>
