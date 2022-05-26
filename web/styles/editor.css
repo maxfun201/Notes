@@ -7,13 +7,18 @@ body {
     font-style: normal;
     font-weight: 700;
     color: White;
+    overflow-x: hidden;
+    user-select: none;
 }
 
 h1 {
+    position: absolute;
+    width: 100%;
     font-size: 50px;
     margin-bottom: 30px;
     text-align: center;
-    margin-top: 35px;
+    margin-top: 20px;
+    z-index: -1;
 }
 
 .left-bottom {
@@ -43,12 +48,16 @@ h1 {
 .cross {
     z-index: 1;
     /*border: 2px dashed red;*/
-    position: absolute;
-    top: 5%;
-    right: 3%;
+    position: sticky;
+    top: 0;
+    float: right;
+    padding-top: 20px;
+    padding-right: 5%;
     width: 70px;
     height: 70px;
     transform: rotate(45deg);
+    margin-top: 30px;
+    margin-right: 4px;
 }
 
 .cross:hover {
@@ -60,7 +69,9 @@ h1 {
     width: 360px;
     text-align: center;
     margin:auto;
-    padding-right: 60px;
+    padding-right: 50px;
+    padding-top: 80px;
+
 }
 
 .circle {
@@ -176,6 +187,7 @@ h1 {
     margin-bottom: 0px;
     margin-left: 20px;
     border: none;
+    user-select: text;
 }
 
 .element-text {
@@ -192,6 +204,7 @@ h1 {
     margin: 20px;
     z-index: -2;
     border: none;
+    user-select: text;
 }
 
 .save-button {
@@ -265,9 +278,11 @@ h1 {
 
 .menu-button{
     /*border: 2px dashed red;*/
-    position: absolute;
-    top: 6%;
-    left: 3%;
+    position: sticky;
+    display: inline-block;
+    top: 0;
+    float: left;
+    padding: 25px 5% 10px;
     width: 60px;
     height: 60px;
 }

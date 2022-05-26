@@ -7,34 +7,45 @@ body {
     font-style: normal;
     font-weight: 700;
     color: White;
+    overflow-x: hidden;
+    user-select: none;
 }
 
 h1 {
+    position: absolute;
+    width: 100%;
     font-size: 50px;
     margin-bottom: 30px;
     text-align: center;
-    margin-top: 35px;
+    margin-top: 20px;
+    z-index: -1;
 }
 
 .menu-button{
     /*border: 2px dashed red;*/
-    position: absolute;
-    top: 6%;
-    left: 3%;
+    position: sticky;
+    display: inline-block;
+    top: 0;
+    float: left;
+    padding: 25px 5% 10px;
     width: 60px;
     height: 60px;
+
 }
 
 .menu-button:hover {
     cursor: pointer;
 }
 
+
 .add {
     z-index: 1;
     /*border: 2px dashed red;*/
-    position: absolute;
-    top: 5%;
-    right: 3%;
+    position: sticky;
+    top: 0;
+    float: right;
+    padding-top: 20px;
+    padding-right: 5%;
     width: 70px;
     height: 70px;
 }
@@ -43,11 +54,41 @@ h1 {
     cursor: pointer;
 }
 
+.cross {
+    z-index: 1;
+    /*border: 2px dashed red;*/
+    position: sticky;
+    top: 0;
+    float: right;
+    padding-right: 0px;
+    padding-top: 20px;
+    width: 70px;
+    height: 70px;
+    transform: rotate(45deg);
+    margin-top: 30px;
+    margin-right: 4px;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
 .right-bottom {
     z-index: -1;
     /*border: 2px dashed red;*/
     position: absolute;
     width: 180px;
+    max-height: 500px;
+    max-width: 25%;
+    bottom: 5%;
+    right: 3%;
+}
+
+.cacti {
+    z-index: -1;
+    /*border: 2px dashed red;*/
+    position: absolute;
+    width: 120px;
     max-width: 25%;
     bottom: 5%;
     right: 3%;
@@ -58,33 +99,57 @@ h1 {
     width: auto;
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 100px;
+    padding-bottom: 10px;;
     text-align: center;
-}
 
-.sticker{
-    display: inline-table;
-    margin: 20px;
-    height: 180px;
-    width: 180px;
-    color: black;
-    padding: 10px;
-    background: #ffcf71;
 }
 
 article{
-    display: inline-table;
-    margin: 20px;
+    display: inline-grid;
+    margin: 1%;
     height: 180px;
     width: 180px;
     color: black;
     padding: 10px;
     background: #ffcf71;
+}
+
+@media screen and (max-width:560px){
+    .stickers-box{margin: 0; margin-top: 100px}
 }
 
 .dots{
     width: 24px;
+    padding: 10px;
+    margin-left: 150px;
+    margin-top: -10px;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.dots:hover {
+    cursor: pointer;
+}
+
+.dots-task{
+    width: 24px;
     float: right;
     visibility: hidden;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: -35px;
+    margin-right: -30px;
+    z-index: 100;
+}
+
+.dots-tasks:hover {
+    cursor: pointer;
+}
+
+.task-text {
+    float: left;
+    user-select: text;
 }
 
 .dots-block {
@@ -93,35 +158,102 @@ article{
 }
 
 h2{
-    margin-top: 3px;
     font-size: 24px;
     font-weight: bold;
-    margin-left: 24px;
+    width: 180px;
+    text-align: center;
+    margin-top: -40px;
+    user-select: text;
+    /*display: table;*/
+    overflow-wrap: break-word;
+    overflow-y: hidden;
 }
 
 h3{
     font-size: 18px;
+    margin-top: -10px;
     font-weight: normal;
+    user-select: text;
+    width: 180px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+
+h3:hover {
+    overflow: auto;
+}
+
+
+figure{
+    display: inline-block;
+    margin: 5px 0 10px 0;
+    height: 30px;
+    width: 95%;
+    color: black;
+    padding: 10px;
+    user-select: text;
+}
+
+h4 {
+    margin-top: 6px;
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: normal;
+    float: left;
+    width: 20%;
+    max-width: 20%;
+    height: 30px;
+    text-align: center;
+    background: yellow;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: text;
+}
+
+h5 {
+    margin-top: 6px;
+    margin-bottom: 0;
+    padding: 10px 0 10px 10px;
+    padding-right: 30px;
+    font-size: 24px;
+    font-weight: normal;
+    float: right;
+    height: 30px;
+    width: 70%;
+    text-align: left;
+    background: #9D96E9;
+    user-select: text;
+}
+
+h5 div {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     top: 0;
     left: 0;
     background-color: #848484;
     overflow-x: hidden;
     padding-top: 60px;
-    transition: 0.5s; /* animation */
+    /*transition: 0.5s; !* animation *!*/
 }
 
 .sidenav .user-box{
     background: #2F2F2F;
     width: auto;
     height: 50px;
-    margin: 0px 25px;
+    margin: 0px 20px;
+    padding: 0 5px;
 }
 
 .user-icon{
@@ -181,8 +313,54 @@ h3{
 /* Page content inside */
 #main {
     transition: margin-left .5s;
-    padding: 20px;
+    padding: 2%;
 }
 
+.tooltip {
+    display			: none;
+    padding			: 2px 3px;
+    /*margin-left		: 8px;*/
+    width			: 130px;
+    /*color: black;*/
+    background		: #ffffff;
+    border			: 1px solid #cccccc;
+    color			: #6c6c6c;
+    position		: absolute;
+    border-radius: 5px;
+    z-index: 100;
+    margin-left: 150px;
+}
 
+.tooltip-task {
+    display			: none;
+    padding			: 2px 3px;
+    /*margin-left		: 8px;*/
+    width			: 130px;
+    /*color: black;*/
+    background		: #ffffff;
+    border			: 1px solid #cccccc;
+    color			: #6c6c6c;
+    position		: absolute;
+    border-radius: 5px;
+    z-index: 100;
+    margin-left: 55%;
+}
 
+.tooltip p, .tooltip-task p {
+    padding:4px;
+    width: 92%;
+    margin: 1px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.tooltip p:hover, .tooltip-task p:hover {
+    background: lemonchiffon;
+    cursor: pointer;
+}
+
+.full-task{
+
+}
