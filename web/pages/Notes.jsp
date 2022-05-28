@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/notes.css">
     <title>Notes</title>
 </head>
-<body>
+<body id="page">
 
 <div id="mySidenav" class="sidenav">
     <div class="user-box">
@@ -43,6 +43,8 @@
         <%-- placeholder stickers  --%>
         <script>
 
+            const page = document.getElementById('page');
+
             var count = 0;
             class Note {
                 constructor(name, text, color) {
@@ -52,6 +54,7 @@
                     this.color = color;
                     count ++;
                 }
+
             }
 
             function toColor(color) {
@@ -88,8 +91,7 @@
             function createNote(note) {
                 const stick = document.createElement("article");
                 stick.id = note.id;
-                const color = toColor(note.color);
-                stick.style.backgroundColor = color;
+                stick.style.backgroundColor = toColor(note.color);
                 const element = document.getElementById("stickerBox");
                 element.appendChild(stick);
 
@@ -102,13 +104,58 @@
                 const elementName = document.getElementById(stick.id);
                 elementName.appendChild(dots);
 
-                stick.addEventListener("mouseover", function( event ) {
+                stick.addEventListener("mouseover", function() {
                     dots.style.visibility = 'visible';
                 }, false);
 
-                stick.addEventListener("mouseout", function( event ) {
+                stick.addEventListener("mouseout", function() {
                     dots.style.visibility = 'hidden';
                 }, false);
+
+                const tooltip = document.createElement("div");
+                tooltip.className = 'tooltip';
+                tooltip.id = 't' + note.id;
+                elementName.appendChild(tooltip);
+
+                const edit = document.createElement("p");
+                tooltip.id = 'edit' + note.id;
+                const editContent = document.createTextNode("edit");
+                edit.appendChild(editContent);
+                tooltip.appendChild(edit);
+
+                edit.addEventListener("click", function () {
+                    location.replace("/EditNote");
+                })
+
+                const del = document.createElement("p");
+                tooltip.id = 'del' + note.id;
+                const delContent = document.createTextNode("delete");
+                del.appendChild(delContent);
+                tooltip.appendChild(del);
+
+                del.addEventListener("click", function (){
+                    deleteNote(note.id);
+                })
+
+                var isOpen = false;
+
+                dots.addEventListener("click", function ( event ) {
+                    setTimeout(function() {
+                        if (!isOpen) {tooltip.style.display = 'inline'; isOpen = true;}
+                        else setTimeout(function () {tooltip.style.display = 'none'; isOpen = false}, 2)
+                    }, 2);
+                }, false);
+
+                page.addEventListener("click", function () {
+                    setTimeout(function () {
+                        if (isOpen) {tooltip.style.display = 'none'; isOpen = false}
+                    })
+                })
+
+                // dots.addEventListener("mouseout", function ( event ) {
+                //     onTooltip = false;
+                //     if (!onTooltip)tooltip.style.display = 'none';
+                // }, false);
 
                 // const block = document.createElement("div");
                 // block.className = 'dots-block';
@@ -128,9 +175,9 @@
 
             let note1 = new Note ('Shopping', 'apple, orange, grape, potato, cheese', 'pink');
             let note2 = new Note ('Walking','go to park and have some chocolate ice cream','green');
-            let note3 = new Note ('','','aqua');
-            let note4 = new Note ('','','violet');
-            let note5 = new Note ('','','yellow');
+            let note3 = new Note ('wwwwwwwwwwwwwwwww','wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','aqua');
+            let note4 = new Note ('','wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','violet');
+            let note5 = new Note ('Title','','yellow');
             let note6 = new Note ('','','blue');
             let note7 = new Note ('','','white');
             let note8 = new Note ('','','orange');
@@ -151,12 +198,23 @@
 <script>
 
     function openNav() {
-        document.getElementById("mySidenav").style.width = "350px";
+        setTimeout(function (){
+            document.getElementById("mySidenav").style.width = "350px";
+        },4)
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
+    function deleteNote (id) {
+        var sticker = document.getElementById(id);
+        sticker.remove();
+    }
+
+    document.getElementById("page").addEventListener("click", function (){
+        closeNav();
+    })
 
 </script>
 
