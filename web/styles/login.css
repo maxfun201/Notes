@@ -3,7 +3,7 @@
 body {
     font-size: 20px;
     background: #2F2F2F;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
 }
