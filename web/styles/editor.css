@@ -3,7 +3,7 @@
 body {
     font-size: 20px;
     background: #2F2F2F;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
     color: White;
@@ -82,10 +82,6 @@ h1 {
     z-index: 100;
 }
 
-.circle , .white-choose , .pink-choose , .orange-choose , .green-choose , .aqua-choose , .yellow-choose , .violet-choose , .blue-choose:hover {
-    cursor: pointer;
-}
-
 .white-choose {
     margin: 5px;
     width: 50px;
@@ -158,6 +154,11 @@ h1 {
      display: inline-flex;
  }
 
+.circle , .white-choose , .pink-choose , .orange-choose , .green-choose ,
+.aqua-choose , .yellow-choose , .violet-choose , .blue-choose:hover {
+    cursor: pointer;
+}
+
 .color-choose
 {
     margin-left: 20px;
@@ -184,7 +185,7 @@ h1 {
     outline-style: hidden;
     font-size: 32px;
     margin-top: 35px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-left: 20px;
     border: none;
     user-select: text;
@@ -250,7 +251,7 @@ h1 {
     background: #2F2F2F;
     width: auto;
     height: 50px;
-    margin: 0px 25px;
+    margin: 0 25px;
 }
 
 .user-icon{

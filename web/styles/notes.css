@@ -3,7 +3,7 @@
 body {
     font-size: 20px;
     background: #2F2F2F;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
     color: White;
@@ -60,7 +60,7 @@ h1 {
     position: sticky;
     top: 0;
     float: right;
-    padding-right: 0px;
+    padding-right: 0;
     padding-top: 20px;
     width: 70px;
     height: 70px;
@@ -164,7 +164,6 @@ h2{
     text-align: center;
     margin-top: -40px;
     user-select: text;
-    /*display: table;*/
     overflow-wrap: break-word;
     overflow-y: hidden;
 }
@@ -217,8 +216,7 @@ h4 {
 h5 {
     margin-top: 6px;
     margin-bottom: 0;
-    padding: 10px 0 10px 10px;
-    padding-right: 30px;
+    padding: 10px 30px 10px 10px;
     font-size: 24px;
     font-weight: normal;
     float: right;
@@ -245,14 +243,13 @@ h5 div {
     background-color: #848484;
     overflow-x: hidden;
     padding-top: 60px;
-    /*transition: 0.5s; !* animation *!*/
 }
 
 .sidenav .user-box{
     background: #2F2F2F;
     width: auto;
     height: 50px;
-    margin: 0px 20px;
+    margin: 0 20px;
     padding: 0 5px;
 }
 
@@ -317,30 +314,25 @@ h5 div {
 }
 
 .tooltip {
-    display			: none;
-    padding			: 2px 3px;
-    margin-left		: 8px;
-    width			: 130px;
-    color: black;
-    background		: #ffffff;
-    border			: 1px solid #cccccc;
-    color			: #6c6c6c;
-    position		: absolute;
+    display: none;
+    padding: 2px 3px;
+    width: 130px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    color: #6c6c6c;
+    position: absolute;
     border-radius: 5px;
     z-index: 100;
     margin-left: 150px;
 }
 
 .tooltip-task {
-    display			: none;
-    padding			: 2px 3px;
-    margin-left		: 8px;
-    width			: 130px;
-    color: black;
-    background		: #ffffff;
-    border			: 1px solid #cccccc;
-    color			: #6c6c6c;
-    position		: absolute;
+    display: none;
+    padding: 2px 3px;
+    width: 130px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    position: absolute;
     border-radius: 5px;
     z-index: 100;
     margin-left: 55%;
