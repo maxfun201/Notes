@@ -26,7 +26,7 @@
     <div class="user-box">
         <img class="user-icon" src="/pages/assets/Profile.svg" alt="Usr">
         <img class="user-exit" src="/pages/assets/Exit.svg" onclick="location.href='/LogIn'" alt="Exit">
-        <p>username</p>
+        <p>${uName}</p>
 
     </div>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
