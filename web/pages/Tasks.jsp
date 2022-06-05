@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/notes.css">
     <title>Tasks</title>
 </head>
-<body>
+<body id="page">
 
 
 
@@ -45,6 +45,8 @@
             <%-- placeholder stickers  --%>
 
             <script>
+
+                const page = document.getElementById('page');
 
                 var count_ = 0;
                 class Task {
@@ -94,13 +96,6 @@
                     const element = document.getElementById("taskBox");
                     element.appendChild(taskk);
 
-                    //<img class="dots" src="/pages/assets/Dots.svg" alt="***">
-
-                    // const block = document.createElement("div");
-                    // block.className = 'dots-block';
-                    // block.id = 'b' + note.id;
-                    // elementName.appendChild(block);
-
                     const head_ = document.createElement("h4");
                     const name_ = document.createTextNode(' ' + task.name + ' ');
                     const color_ = toColor(task.color);
@@ -124,13 +119,49 @@
                     dots_.src = '/pages/assets/Dots.svg';
                     content_.appendChild(dots_);
 
-                    taskk.addEventListener("mouseover", function( event ) {
+                    taskk.addEventListener("mouseover", function() {
                         dots_.style.visibility = 'visible';
                     }, false);
 
-                    taskk.addEventListener("mouseout", function( event ) {
+                    taskk.addEventListener("mouseout", function() {
                         dots_.style.visibility = 'hidden';
                     }, false);
+
+                    const tooltip = document.createElement("div");
+                    tooltip.className = 'tooltip-task';
+                    tooltip.id = 't' + task.id;
+                    elementName_.appendChild(tooltip);
+
+                    const edit = document.createElement("p");
+                    tooltip.id = 'edit' + task.id;
+                    const editContent = document.createTextNode("edit");
+                    edit.appendChild(editContent);
+                    tooltip.appendChild(edit);
+
+                    edit.addEventListener("click", function () {
+                        location.replace("/EditTask");
+                    })
+
+                    const del = document.createElement("p");
+                    tooltip.id = 'del' + task.id;
+                    const delContent = document.createTextNode("delete");
+                    del.appendChild(delContent);
+                    tooltip.appendChild(del);
+
+                    del.addEventListener("click", function (){
+                        deleteTask(task.id);
+                    })
+
+                    dots_.addEventListener("click", function () {
+                        setTimeout(function() {
+                            tooltip.style.display = 'inline';
+                            }, 2)
+                    }, false);
+
+                    page.addEventListener("click", function () {
+                        tooltip.style.display = 'none';
+                    })
+
                 }
 
                 let task1 = new Task ('11/01/22', 'birthday','pink');
@@ -158,12 +189,23 @@
     <script>
 
         function openNav() {
+            setTimeout(function (){
             document.getElementById("mySidenav").style.width = "350px";
+            },4)
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
+        function deleteTask (id) {
+            var task = document.getElementById(id);
+            task.remove();
+        }
+
+        document.getElementById("page").addEventListener("click", function (){
+            closeNav();
+        })
 
     </script>
 

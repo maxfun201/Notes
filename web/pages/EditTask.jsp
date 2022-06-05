@@ -40,7 +40,7 @@
     <br/>
     <div class="bottom-buttons">
         <span>
-            <button class="save-button" type="button" onclick="location.href='/Tasks'">
+            <button class="save-button" type="button" onclick="location.href='/pages/Tasks.jsp'">
                 <div class="text">SAVE</div>
             </button>
             <div class="color-choose">

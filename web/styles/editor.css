@@ -3,11 +3,12 @@
 body {
     font-size: 20px;
     background: #2F2F2F;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
     color: White;
     overflow-x: hidden;
+    user-select: none;
 }
 
 h1 {
@@ -55,8 +56,8 @@ h1 {
     width: 70px;
     height: 70px;
     transform: rotate(45deg);
-    margin-top: 25px;
-    margin-right: 5px;
+    margin-top: 30px;
+    margin-right: 4px;
 }
 
 .cross:hover {
@@ -79,10 +80,6 @@ h1 {
     border-radius: 35px;
     background: white;
     z-index: 100;
-}
-
-.circle , .white-choose , .pink-choose , .orange-choose , .green-choose , .aqua-choose , .yellow-choose , .violet-choose , .blue-choose:hover {
-    cursor: pointer;
 }
 
 .white-choose {
@@ -157,6 +154,11 @@ h1 {
      display: inline-flex;
  }
 
+.circle , .white-choose , .pink-choose , .orange-choose , .green-choose ,
+.aqua-choose , .yellow-choose , .violet-choose , .blue-choose:hover {
+    cursor: pointer;
+}
+
 .color-choose
 {
     margin-left: 20px;
@@ -183,9 +185,10 @@ h1 {
     outline-style: hidden;
     font-size: 32px;
     margin-top: 35px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-left: 20px;
     border: none;
+    user-select: text;
 }
 
 .element-text {
@@ -202,6 +205,7 @@ h1 {
     margin: 20px;
     z-index: -2;
     border: none;
+    user-select: text;
 }
 
 .save-button {
@@ -247,7 +251,7 @@ h1 {
     background: #2F2F2F;
     width: auto;
     height: 50px;
-    margin: 0px 25px;
+    margin: 0 25px;
 }
 
 .user-icon{
