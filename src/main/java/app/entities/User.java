@@ -49,14 +49,6 @@ public class User {
         this.role = role;
     }
 
-//    @Override
-//    public String toString(){
-//        return "User{" +
-//                "name='" + login + '\'' +
-//                ", password='" + password + '\'' +
-//                '}';
-//    }
-
     @Override
     public boolean equals(Object o){
         if(this == o) return true;

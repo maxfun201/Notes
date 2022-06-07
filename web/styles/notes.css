@@ -352,3 +352,8 @@ h5 div {
     background: lemonchiffon;
     cursor: pointer;
 }
+
+/*.note-deleted {*/
+/*    visibility: hidden;*/
+/*    position: absolute;*/
+/*}*/

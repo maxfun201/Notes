@@ -17,7 +17,7 @@
     <div class="user-box">
         <img class="user-icon" src="/pages/assets/Profile.svg" alt="Usr">
         <img class="user-exit" src="/pages/assets/Exit.svg" onclick="location.href='/LogIn'" alt="Exit">
-        <p>username</p>
+        <p>${uName}</p>
 
     </div>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">〈</a>
@@ -30,17 +30,18 @@
 
 <img class="menu-button" src="/pages/assets/Menu.svg" onclick="openNav()" alt="Menu">
 <h1>Edit note</h1>
-<img class="cross" src="/pages/assets/Plus.svg" onclick="location.href='/pages/Notes.jsp'" alt="CLOSE">
+<img class="cross" src="/pages/assets/Plus.svg" onclick="Save()" alt="CLOSE">
 <img class="left-bottom" src="/pages/assets/EditNotesPlant.png" alt="">
 
+<form method="post">
 <div class="edit-window">
-    <input type="text" class="element-name" id="elementName" placeholder="Note name" maxlength="15">
+    <input type="text" class="element-name" id="elementName" placeholder="Note name" maxlength="15" name="eNoteName">
     <br/>
-    <textarea class="element-text" id="elementText" cols="26" rows="5" maxlength="130" placeholder="Note text"></textarea>
+    <textarea class="element-text" id="elementText" cols="26" rows="5" maxlength="130" placeholder="Note text" name="eNoteText"></textarea>
     <br/>
     <div class="bottom-buttons">
         <span>
-            <button class="save-button" type="button" onclick="location.href='/pages/Notes.jsp'">
+            <button class="save-button" type="submit" onclick="location.href='/pages/Notes.jsp'">
                 <div class="text">SAVE</div>
             </button>
             <div class="color-choose">
@@ -60,6 +61,9 @@
     </div>
 </div>
 
+<div class="color-name" id="colorName" name="eColor">white</div>
+</form>
+
 <script>
     var show = false;
 
@@ -75,6 +79,7 @@
     }
 
     function toColor(color) {
+        document.getElementById("colorName").textContent = color;
         switch (color) {
             case 'white':
                 break;
@@ -117,6 +122,7 @@
         document.getElementById("mySidenav").style.width = "0";
     }
 
+    function Save() { window.location.href = location.href='/pages/Notes.jsp'; }
 </script>
 
 <%-- color should be stored with names and text, change accordingly on other pages --%>

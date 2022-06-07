@@ -94,102 +94,89 @@
                 stick.style.backgroundColor = toColor(note.color);
                 const element = document.getElementById("stickerBox");
                 element.appendChild(stick);
-
                 //<img class="dots" src="/pages/assets/Dots.svg" alt="***">
-
                 const dots = document.createElement("img");
                 dots.className = 'dots';
                 dots.id = 'd' + note.id;
                 dots.src = '/pages/assets/Dots.svg';
                 const elementName = document.getElementById(stick.id);
                 elementName.appendChild(dots);
-
                 stick.addEventListener("mouseover", function() {
                     dots.style.visibility = 'visible';
                 }, false);
-
                 stick.addEventListener("mouseout", function() {
                     dots.style.visibility = 'hidden';
                 }, false);
-
                 const tooltip = document.createElement("div");
                 tooltip.className = 'tooltip';
                 tooltip.id = 't' + note.id;
                 elementName.appendChild(tooltip);
-
                 const edit = document.createElement("p");
                 tooltip.id = 'edit' + note.id;
                 const editContent = document.createTextNode("edit");
                 edit.appendChild(editContent);
                 tooltip.appendChild(edit);
-
                 edit.addEventListener("click", function () {
                     location.replace("/EditNote");
                 })
-
                 const del = document.createElement("p");
                 tooltip.id = 'del' + note.id;
                 const delContent = document.createTextNode("delete");
                 del.appendChild(delContent);
                 tooltip.appendChild(del);
-
                 del.addEventListener("click", function (){
                     deleteNote(note.id);
                 })
-
                 var isOpen = false;
-
                 dots.addEventListener("click", function ( event ) {
                     setTimeout(function() {
                         if (!isOpen) {tooltip.style.display = 'inline'; isOpen = true;}
                         else setTimeout(function () {tooltip.style.display = 'none'; isOpen = false}, 2)
                     }, 2);
                 }, false);
-
                 page.addEventListener("click", function () {
                     setTimeout(function () {
                         if (isOpen) {tooltip.style.display = 'none'; isOpen = false}
                     })
                 })
-
                 // dots.addEventListener("mouseout", function ( event ) {
                 //     onTooltip = false;
                 //     if (!onTooltip)tooltip.style.display = 'none';
                 // }, false);
-
                 // const block = document.createElement("div");
                 // block.className = 'dots-block';
                 // block.id = 'b' + note.id;
                 // elementName.appendChild(block);
-
                 const head = document.createElement("h2");
                 const name = document.createTextNode(note.name);
                 head.appendChild(name);
                 elementName.appendChild(head);
-
                 const content = document.createElement("h3");
                 const text = document.createTextNode(note.text);
                 content.appendChild(text);
                 elementName.appendChild(content);
             }
 
-            let note1 = new Note ('Shopping', 'apple, orange, grape, potato, cheese', 'pink');
-            let note2 = new Note ('Walking','go to park and have some chocolate ice cream','green');
-            let note3 = new Note ('wwwwwwwwwwwwwwwww','wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','aqua');
-            let note4 = new Note ('','wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww','violet');
-            let note5 = new Note ('Title','','yellow');
-            let note6 = new Note ('','','blue');
-            let note7 = new Note ('','','white');
-            let note8 = new Note ('','','orange');
 
+            var NoteSum = Number(${NoteSum});
+
+            <%--let ${NoteName} = new Note (NoteName, NoteText, 'pink');--%>
+
+            <%--for (i = 1; i <= NoteSum; i++) {--%>
+            <%--    var tmp = String(i);--%>
+            <%--    var NoteName = ${NoteName};--%>
+            <%--    var NoteText = '${NoteText}';--%>
+            <%--    createNote(new Note('${NoteName}', '${NoteText}', 'pink'));--%>
+            <%--}--%>
+
+            let note1 = new Note ('Shopping', 'apple, orange, grape, potato, cheese', 'pink');
             createNote(note1);
-            createNote(note2);
-            createNote(note3);
-            createNote(note4);
-            createNote(note5);
-            createNote(note6);
-            createNote(note7);
-            createNote(note8);
+
+            createNote(new Note('Shopping', 'milk, carrot, apple, ...', 'green'));
+
+            createNote(new Note('${NoteName1}', '${NoteText1}', 'pink'));
+
+
         </script>
     </div>
 
@@ -210,6 +197,7 @@
     function deleteNote (id) {
         var sticker = document.getElementById(id);
         sticker.remove();
+        // document.getElementById('delete').value = id;
     }
 
     document.getElementById("page").addEventListener("click", function (){
@@ -217,6 +205,10 @@
     })
 
 </script>
+
+<%--<form method="post">--%>
+<%--    <input class="note-deleted" type="hidden" name="delete" id="delete" value=""></input>--%>
+<%--</form>--%>
 
 </body>
 </html>

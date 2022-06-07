@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.sql.*;
 
 import static app.servlets.AuthFilter.ID;
+import static app.servlets.AuthFilter.USERNAME;
 
 public class NotesServlet extends HttpServlet {
     @Override
@@ -40,6 +41,30 @@ public class NotesServlet extends HttpServlet {
                     break;
                 }
             }
+
+            ServletContext servletContext1 = getServletContext();
+            int NoteSum = 0;
+            resultSet = statement.executeQuery("select * from " + USERNAME);
+            String NoteName = "NoteName" + Integer.toString(NoteSum+1);
+            String NoteText = "NoteText" + Integer.toString(NoteSum+1);
+
+                while(resultSet.next()) {
+                    String notename = resultSet.getString("notename");
+                    String notetext = resultSet.getString("notetext");
+                    NoteSum++;
+                    servletContext1.setAttribute(NoteName, notename);
+                    servletContext1.setAttribute(NoteText, notetext);
+                    NoteName = "NoteName" + Integer.toString(NoteSum+1);
+                    NoteText = "NoteText" + Integer.toString(NoteSum+1);
+                }
+                servletContext1.setAttribute("NoteSum", NoteSum);
+                NoteSum = 0;
+
+
+
+//            String del = req.getParameter("delete");
+//            System.out.println(del);
+//            statement.executeUpdate("delete from " + USERNAME + " where notename = '" + del + "'");
         }
         catch (ClassNotFoundException e){
             e.printStackTrace();
@@ -57,7 +82,7 @@ public class NotesServlet extends HttpServlet {
         }
         System.out.println(ID);
 
-        getServletContext().getRequestDispatcher("/pages/Notes.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("pages/Notes.jsp").forward(req, resp);
     }
 
     //int user_id = ID;

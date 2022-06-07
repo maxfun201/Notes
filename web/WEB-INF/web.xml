@@ -95,24 +95,4 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
-
-<!--    <login-config>-->
-<!--        <auth-method>FORM</auth-method>-->
-<!--        <form-login-config>-->
-<!--            <form-login-page>/LogIn</form-login-page>-->
-<!--            <form-error-page>/auth</form-error-page>-->
-<!--        </form-login-config>-->
-<!--    </login-config>-->
-<!--    <security-constraint>-->
-<!--        <web-resource-collection>-->
-<!--            <web-resource-name>Notes</web-resource-name>-->
-<!--            <url-pattern>/EditNote</url-pattern>-->
-<!--        </web-resource-collection>-->
-<!--        <auth-constraint>-->
-<!--            <role-name>user</role-name>-->
-<!--        </auth-constraint>-->
-<!--    </security-constraint>-->
-<!--    <security-role>-->
-<!--        <role-name>user</role-name>-->
-<!--    </security-role>-->
 </web-app>

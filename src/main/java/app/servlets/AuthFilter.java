@@ -16,6 +16,7 @@ import static java.util.Objects.nonNull;
 public class AuthFilter implements Filter {
 
     public static int ID = 0;
+    public static String USERNAME = null;
 
     @Override
     public void init(FilterConfig fConfig) throws ServletException {
@@ -54,6 +55,8 @@ public class AuthFilter implements Filter {
                     String currentPassword = resultSet.getString("password");
                     if(currentPassword.equals(password)){
                         ID = resultSet.getInt("userid");
+                        USERNAME = resultSet.getString("login");
+                        System.out.println(USERNAME);
                         break;
                     }
                 }

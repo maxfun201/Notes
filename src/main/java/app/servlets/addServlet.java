@@ -56,6 +56,8 @@ public class addServlet extends HttpServlet {
 
                 statement.executeUpdate("insert into users values ( " + usrId + ", '" + name + "', '" + password + "')");
 
+                statement.executeQuery("create table " + name + "( NoteName varchar(30), NoteText varchar(200), color varchar(10));");
+
                 connection.close();
             }
 
